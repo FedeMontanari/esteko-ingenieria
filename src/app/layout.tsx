@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/nav-bar";
 import Image from "next/image";
@@ -9,6 +10,12 @@ const ENV = process.env.NODE_ENV;
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const akira = localFont({
+  src: "../assets/fonts/akira_expanded.otf",
+  variable: "--font-akira",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
     return (
       <html lang="es">
         <body
-          className={`${montserrat.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden`}
+          className={`${montserrat.variable} ${akira.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden`}
         >
           <h1 className="text-white text-2xl absolute bottom-12">
             En Construcción
@@ -43,7 +50,7 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className={`antialiased`}>
+      <body className={`antialiased ${montserrat.variable} ${akira.variable}`}>
         <NavBar />
         {children}
       </body>

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
 import {
@@ -7,8 +9,11 @@ import {
 } from "@/components/ui/popover";
 
 import Image from "next/image";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function NavBar() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex items-center justify-between">
       <div>
@@ -28,14 +33,22 @@ export default function NavBar() {
           </Link>
         </Button>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 px-4">
         <Button variant="link" asChild className="text-lg font-bold text-black">
           <Link href="/">Inicio</Link>
         </Button>
-        <Popover>
+        <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
-            <Button variant="link" className="text-lg font-bold text-black">
+            <Button
+              variant="link"
+              className="text-lg font-bold text-black flex items-center gap-2"
+            >
               Menu
+              {open ? (
+                <ChevronUp className="w-4 h-4" />
+              ) : (
+                <ChevronDown className="w-4 h-4" />
+              )}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-screen">

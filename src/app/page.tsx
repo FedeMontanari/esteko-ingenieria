@@ -2,6 +2,7 @@ import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import AboutUs from "@/components/about-us";
 
 const ENV = process.env.NODE_ENV;
 
@@ -12,7 +13,7 @@ export default function Home() {
         <h1 className="sr-only">Esteko Ingeniería</h1>
         <div className="flex flex-col items-center justify-center">
           <div className="relative w-screen h-full">
-            <div className="absolute inset-0 -z-10">
+            <div className="inset-0 -z-10 absolute">
               <Image
                 src="/hero-full.jpg"
                 alt="Esteko Ingeniería"
@@ -21,7 +22,19 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-1/2 p-12 bg-black/80">
+            <div
+              className="absolute inset-0 -z-10 bg-black/60 w-[60%] h-full"
+              style={{
+                clipPath: "polygon(0 0, 100% 0%, 80% 100%, 0% 100%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 -z-10 bg-black/60 w-[80%] h-full"
+              style={{
+                clipPath: "polygon(0 0, 100% 0%, 85% 100%, 0% 100%)",
+              }}
+            />
+            <div className="w-1/2 p-12">
               <Image
                 src="/hero.png"
                 alt="Esteko Ingeniería"
@@ -29,11 +42,12 @@ export default function Home() {
                 height={453}
                 className="w-full h-full p-12"
               />
-              <p className="text-white text-center text-2xl font-bold">
-                Soluciones <span className="text-primary">innovadoras</span>,{" "}
-                <span className="text-primary">precisas</span> y{" "}
-                <span className="text-primary">modernas</span> para potenciar
-                tus proyectos de ingeniería.
+              <p className="text-white text-center text-2xl">
+                Soluciones{" "}
+                <span className="text-primary font-bold">innovadoras</span>,{" "}
+                <span className="text-primary font-bold">precisas</span> y{" "}
+                <span className="text-primary font-bold">modernas</span> para
+                potenciar tus proyectos de ingeniería.
               </p>
               <div className="flex flex-col gap-4 items-center pt-12">
                 <Button className="text-lg font-bold px-12" asChild>
@@ -50,6 +64,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <AboutUs />
       </MaxWidthWrapper>
     );
   }
