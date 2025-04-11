@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import AboutUs from "@/components/about-us";
+import ServicesSection from "@/components/services-section";
+import Footer from "@/components/footer";
 
 const ENV = process.env.NODE_ENV;
 
@@ -65,6 +67,8 @@ export default function Home() {
           </div>
         </div>
         <AboutUs />
+        <ServicesSection />
+        <Footer />
       </MaxWidthWrapper>
     );
   }
