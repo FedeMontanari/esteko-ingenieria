@@ -16,11 +16,10 @@ import { Slash } from "lucide-react";
 export default async function ServicioPage({
   params,
 }: {
-  params: { name: Promise<string> };
+  params: Promise<{ name: string }>;
 }) {
   const { name } = await params;
 
-  // @ts-expect-error interpreter doesn't know params are async awaited - Blame Next.js
   const service = SERVICES.find((service) => service.id === name);
 
   if (!service) {
