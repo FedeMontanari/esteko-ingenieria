@@ -11,11 +11,14 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { SERVICES } from "@/lib/constants/services";
+import { Separator } from "./ui/separator";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between sticky top-0 bg-white z-50 border-b">
       <div>
         <h1 className="sr-only">Esteko Ingeniería</h1>
         <Button variant="link" asChild>
@@ -51,11 +54,30 @@ export default function NavBar() {
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-screen">
-            <div className="flex flex-col gap-4">
-              <Link href="/">Inicio</Link>
-              <Link href="/">Inicio</Link>
-              <Link href="/">Inicio</Link>
+          <PopoverContent className="w-screen flex justify-evenly items-start h-[215px]">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-2xl font-bold">Nosotros</h3>
+              <Link
+                onClick={() => setOpen(false)}
+                className="text-sm"
+                href="/contacto"
+              >
+                Contáctanos
+              </Link>
+            </div>
+            <Separator orientation="vertical" />
+            <div className="flex flex-col gap-2">
+              <h3 className="text-2xl font-bold">Servicios</h3>
+              {SERVICES.map((service) => (
+                <Link
+                  className="text-sm"
+                  key={service.id}
+                  href={`/servicios/${service.id}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {service.title}
+                </Link>
+              ))}
             </div>
           </PopoverContent>
         </Popover>

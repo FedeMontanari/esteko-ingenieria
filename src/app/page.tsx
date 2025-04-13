@@ -1,4 +1,3 @@
-import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,10 +10,11 @@ const ENV = process.env.NODE_ENV;
 export default function Home() {
   if (ENV !== "production") {
     return (
-      <MaxWidthWrapper>
+      <main className="w-full">
         <h1 className="sr-only">Esteko Ingeniería</h1>
         <div className="flex flex-col items-center justify-center">
-          <div className="relative w-screen h-full">
+          {/* Hero */}
+          <div className="relative w-screen">
             <div className="inset-0 -z-10 absolute">
               <Image
                 src="/hero-full.jpg"
@@ -36,13 +36,13 @@ export default function Home() {
                 clipPath: "polygon(0 0, 100% 0%, 85% 100%, 0% 100%)",
               }}
             />
-            <div className="w-1/2 p-12">
+            <div className="w-1/2 px-12">
               <Image
                 src="/hero.png"
                 alt="Esteko Ingeniería"
-                width={601}
-                height={453}
-                className="w-full h-full p-12"
+                width={550}
+                height={400}
+                className="w-full h-full p-8"
               />
               <p className="text-white text-center text-2xl">
                 Soluciones{" "}
@@ -51,7 +51,7 @@ export default function Home() {
                 <span className="text-primary font-bold">modernas</span> para
                 potenciar tus proyectos de ingeniería.
               </p>
-              <div className="flex flex-col gap-4 items-center pt-12">
+              <div className="flex flex-col gap-4 items-center py-12">
                 <Button className="text-lg font-bold px-12" asChild>
                   <Link href="/contacto">Trabajemos Juntos</Link>
                 </Button>
@@ -69,7 +69,7 @@ export default function Home() {
         <AboutUs />
         <ServicesSection />
         <Footer />
-      </MaxWidthWrapper>
+      </main>
     );
   }
   return null;
