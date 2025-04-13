@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SiLinkedin, SiInstagram } from "@icons-pack/react-simple-icons";
+import { cn } from "@/lib/utils";
+import { SERVICES } from "@/lib/constants/services";
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className="bg-foreground text-white">
+    <footer className={cn("bg-foreground text-white", className)}>
       <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8">
         <div className="flex flex-col items-center justify-center gap-4 border-r border-white">
           <div className="flex flex-row items-center justify-center space-x-12">
@@ -39,18 +41,16 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-3xl">Servicios</p>
-            <Link className="text-sm" href="/">
-              Consultoría B.I.M
-            </Link>
-            <Link className="text-sm" href="/">
-              Cálculo estructural
-            </Link>
-            <Link className="text-sm" href="/">
-              Dirección y asesoramiento
-            </Link>
-            <Link className="text-sm" href="/">
-              Fotogrametría con drones
-            </Link>
+            {SERVICES.map((service) => (
+              <Link
+                key={service.id}
+                className="text-sm"
+                href={service.href}
+                scroll={false}
+              >
+                {service.title}
+              </Link>
+            ))}
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-3xl">Nosotros</p>
