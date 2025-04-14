@@ -1,4 +1,3 @@
-import Footer from "@/components/footer";
 import { SERVICES } from "@/lib/constants/services";
 import { notFound } from "next/navigation";
 import {
