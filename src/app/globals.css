@@ -125,3 +125,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  background-image: url("../assets/images/background/bg-transparent.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}

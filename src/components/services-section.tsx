@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ServicesSection() {
   return (
-    <div className="flex flex-col flex-wrap w-full my-12 items-center justify-center">
+    <div className="flex flex-col flex-wrap w-full pt-12 items-center justify-center">
       <h2 className="text-5xl font-extrabold">Nuestros Servicios</h2>
       <div className="w-full flex flex-col items-center justify-center gap-12 mt-24">
         {SERVICES.map((service, i) => (
