@@ -14,6 +14,7 @@ import { Slash } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { CONTACT_DATA } from "@/lib/constants/contact";
 
 export default function Contacto() {
   return (
@@ -53,7 +54,7 @@ export default function Contacto() {
         <div
           className="bg-foreground text-white py-12 w-1/4"
           style={{
-            clipPath: "polygon(0 0, 70% 0%, 60% 100%, 0% 100%)",
+            clipPath: "polygon(0 0, 80% 0%, 70% 100%, 0% 100%)",
           }}
         >
           <h3 className="text-2xl font-bold pl-4">
@@ -63,10 +64,10 @@ export default function Contacto() {
           </h3>
           <div className="px-12 pt-8 flex flex-col gap-4">
             <p className="relative before:content-[''] before:-left-10 before:absolute before:-bottom-1 before:w-[100px] before:h-[2px] before:bg-primary">
-              esteko.ingenieria@gmail.com
+              {CONTACT_DATA.email}
             </p>
             <p className="relative before:content-[''] before:-left-10 before:absolute before:-bottom-1 before:w-[100px] before:h-[2px] before:bg-primary">
-              3854886714 / 3855892806
+              {CONTACT_DATA.phone}
             </p>
           </div>
         </div>

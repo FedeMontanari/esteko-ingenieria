@@ -3,6 +3,8 @@ import Image from "next/image";
 import { SiLinkedin, SiInstagram } from "@icons-pack/react-simple-icons";
 import { cn } from "@/lib/utils";
 import { SERVICES } from "@/lib/constants/services";
+import { CONTACT_DATA } from "@/lib/constants/contact";
+import { Separator } from "./ui/separator";
 
 export default function Footer({ className }: { className?: string }) {
   return (
@@ -16,18 +18,26 @@ export default function Footer({ className }: { className?: string }) {
               width={120}
               height={120}
             />
-            <div className="space-y-2 text-center">
-              <p>esteko.ingenieria@gmail.com</p>
-              <p>3854886714 / 3855892806</p>
-              <p>Neuquén Capital, Argentina.</p>
+            <div className="space-y-2">
+              <p>{CONTACT_DATA.email}</p>
+              <p>{CONTACT_DATA.phone}</p>
+              <p>{CONTACT_DATA.address}</p>
             </div>
           </div>
           <div className="flex flex-row gap-4">
             <span>Seguinos en</span>
-            <Link href="https://www.linkedin.com/company/esteko-ingenieria/">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={CONTACT_DATA.linkedin}
+            >
               <SiLinkedin />
             </Link>
-            <Link href="https://www.instagram.com/esteko.ingenieria/">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href={CONTACT_DATA.instagram}
+            >
               <SiInstagram />
             </Link>
           </div>
@@ -65,23 +75,32 @@ export default function Footer({ className }: { className?: string }) {
             &copy; {new Date().getFullYear()} Esteko Ingeniería. Todos los
             derechos reservados.
           </p>
-          <p className="text-center text-sm text-muted-foreground">
-            Diseño -{" "}
-            <Link
-              href="https://www.linkedin.com/in/juan-pablo-garcia-garcia-b20000200/"
-              className="underline"
-            >
-              Nicolás Silva
-            </Link>
-            Desarrollo -{" "}
-            <Link
-              href="https://www.linkedin.com/in/juan-pablo-garcia-garcia-b20000200/"
-              className="underline"
-            >
-              Federico Montanari
-            </Link>
-            .
-          </p>
+          <div className="text-center text-sm text-muted-foreground h-5 flex flex-row items-center justify-center space-x-2">
+            <p>
+              Diseño -{" "}
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={CONTACT_DATA.designer}
+                className="underline"
+              >
+                Nicolás Silva
+              </Link>
+            </p>
+            <Separator orientation="vertical" className="h-full inline" />
+            <p>
+              Desarrollo -{" "}
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={CONTACT_DATA.developer}
+                className="underline"
+              >
+                Federico Montanari
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </div>
     </footer>
