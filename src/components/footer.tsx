@@ -8,7 +8,12 @@ import { Separator } from "./ui/separator";
 
 export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className={cn("bg-foreground text-white", className)}>
+    <footer
+      className={cn(
+        "bg-foreground text-white absolute bottom-0 left-0 right-0 w-full z-10",
+        className
+      )}
+    >
       <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8">
         <div className="flex flex-col items-center justify-center gap-4 border-r border-white">
           <div className="flex flex-row items-center justify-center space-x-12">

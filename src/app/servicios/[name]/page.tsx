@@ -137,7 +137,6 @@ export default async function ServicioPage({
           </div>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }

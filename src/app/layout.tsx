@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/nav-bar";
 import Image from "next/image";
+import Footer from "@/components/footer";
 
 const ENV = process.env.NODE_ENV;
 
@@ -50,9 +51,12 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className={`antialiased ${montserrat.variable} ${akira.variable}`}>
+      <body
+        className={`antialiased ${montserrat.variable} ${akira.variable} flex flex-col min-h-screen relative pb-[340px]`}
+      >
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

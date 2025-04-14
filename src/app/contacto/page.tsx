@@ -89,7 +89,6 @@ export default function Contacto() {
           </form>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }
