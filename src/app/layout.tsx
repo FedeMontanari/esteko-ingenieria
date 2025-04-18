@@ -43,6 +43,12 @@ export default function RootLayout({
   if (ENV === "production") {
     return (
       <html lang="es">
+        <head>
+          <meta
+            name="google-site-verification"
+            content="QuK6G-W3bxR028m6L8nTM_RAinuYRi8WEVYNyZuCyiM"
+          />
+        </head>
         <body
           className={`${montserrat.variable} ${akira.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden bg-gradient`}
         >
@@ -62,6 +68,12 @@ export default function RootLayout({
 
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="QuK6G-W3bxR028m6L8nTM_RAinuYRi8WEVYNyZuCyiM"
+        />
+      </head>
       <body
         className={`antialiased ${montserrat.variable} ${akira.variable} flex flex-col min-h-screen relative pb-[340px]`}
       >
