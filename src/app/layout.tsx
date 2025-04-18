@@ -6,7 +6,7 @@ import NavBar from "@/components/nav-bar";
 import Image from "next/image";
 import Footer from "@/components/footer";
 
-const ENV = process.env.NODE_ENV;
+const ENV = process.env.NEXT_PUBLIC_ENVIRONMENT || process.env.NODE_ENV;
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,7 +40,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (ENV === "production") {
+  if (ENV === "production" && !process.env.NEXT_PUBLIC_PREVIEW_MODE) {
     return (
       <html lang="es">
         <head>
