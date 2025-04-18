@@ -20,8 +20,19 @@ const akira = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Esteko Ingeniería",
-  description: "Esteko Ingeniería",
+  metadataBase: new URL("https://www.estekoingenieria.com/"),
+  title: {
+    default: "Esteko Ingeniería",
+    template: "%s | Esteko Ingeniería",
+  },
+  description:
+    "Esteko Ingeniería, Ingeniería y Construcción. Ofrecemos soluciones integrales en ingeniería y construcción.",
+  // openGraph: {
+  //   title: "Esteko Ingeniería",
+  //   description:
+  //     "Esteko Ingeniería, Ingeniería y Construcción. Ofrecemos soluciones integrales en ingeniería y construcción.",
+  //   images: "/og.png",
+  // },
 };
 
 export default function RootLayout({

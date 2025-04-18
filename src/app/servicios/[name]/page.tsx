@@ -11,6 +11,27 @@ import {
 
 import Image from "next/image";
 import { Slash } from "lucide-react";
+import { Metadata } from "next";
+import { PageProps } from "../../../../.next/types/app/servicios/[name]/page";
+import ServiceContent from "./_components/service-content";
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
+  const service = SERVICES.find((service) => service.id === params.name);
+
+  if (!service) {
+    return notFound();
+  }
+
+  return {
+    title: `${service.title} | Esteko Ingeniería`,
+    description: service.description,
+    openGraph: {
+      title: `${service.title} | Esteko Ingeniería`,
+      description: service?.description,
+    },
+  };
+}
 
 export default async function ServicioPage({
   params,
@@ -27,6 +48,7 @@ export default async function ServicioPage({
 
   return (
     <main className="min-h-screen w-full">
+      {/* Hero section */}
       <div className="relative w-full">
         <Image
           src={service.image}
@@ -65,7 +87,7 @@ export default async function ServicioPage({
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink
-                    className="text-white hover:text-white/80"
+                    className="text-white hover:text-white/80 text-lg"
                     href="/"
                   >
                     Inicio
@@ -74,67 +96,24 @@ export default async function ServicioPage({
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
-                <BreadcrumbItem className="text-white">
+                <BreadcrumbItem className="text-white text-lg">
                   Servicios
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="text-primary font-bold text-xl">
-                    {service.title}
-                  </BreadcrumbPage>
+                <BreadcrumbItem className="text-primary text-lg font-bold">
+                  {service.title}
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </nav>
         </div>
       </div>
+
+      {/* Service content section */}
       <div className="w-full py-24">
-        <div className="flex flex-col items-center justify-center">
-          <h2 className="text-2xl font-bold">{service.legend}</h2>
-          <div className="pt-12 w-3/4">
-            <Image
-              src={service.image}
-              alt={service.title}
-              width={600}
-              height={450}
-              className="float-left mr-12"
-              style={{
-                shapeOutside: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-              }}
-            />
-            <p className="text-lg">{service.description}</p>
-            <ul className="list-disc list-inside py-4">
-              {service.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, ex dolorem. Illum iusto necessitatibus voluptatem
-              nobis, reiciendis quasi tenetur libero dolorem quia quas nostrum,
-              delectus velit et ipsum excepturi debitis. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Ipsa aliquam sint nam nisi
-              ducimus officiis eligendi autem, facere saepe. Vitae itaque
-              ratione illo possimus quibusdam ipsum quo iste accusamus
-              doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Quidem cupiditate, pariatur dolorum fuga perspiciatis sequi
-              at iure quisquam praesentium asperiores, ad totam quam libero et a
-              magni! Unde, laudantium eum! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Ad temporibus, mollitia, aut sequi
-              animi explicabo dolor provident nulla aperiam rerum tenetur
-              incidunt dignissimos. Ea ab voluptate quae obcaecati sed corporis.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              dolor sit minima fugiat blanditiis soluta fugit, iusto officia
-              delectus sed rerum harum eos voluptatem? Ipsam corporis quisquam
-              soluta ipsa quam. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Optio nihil, sunt vel odio enim officia neque
-              labore deleniti assumenda iste dolorum fugiat? Veritatis molestiae
-              amet dicta architecto aperiam exercitationem dolore.
-            </p>
-          </div>
-        </div>
+        <ServiceContent service={service} />
       </div>
     </main>
   );

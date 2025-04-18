@@ -7,8 +7,21 @@ import bimLogo from "@/assets/images/services/logos/bim-logo.svg";
 import structuralCalculationLogo from "@/assets/images/services/logos/structural-calculation-logo.svg";
 import constructionManagementLogo from "@/assets/images/services/logos/management-logo.svg";
 import dronePhotographyLogo from "@/assets/images/services/logos/drone-logo.svg";
+import { StaticImageData } from "next/image";
 
-export const SERVICES = [
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  items: string[];
+  image: StaticImageData;
+  href: string;
+  logo: StaticImageData;
+  legend: string;
+  carouselImages: StaticImageData[];
+}
+
+export const SERVICES: Service[] = [
   {
     id: "consultoria-bim",
     title: "Consultoría B.I.M",
@@ -26,6 +39,7 @@ export const SERVICES = [
     href: "/servicios/consultoria-bim",
     logo: bimLogo,
     legend: "Optimiza tus proyectos con nuestra Consultoría BIM",
+    carouselImages: [bim, bim, bim, bim, bim],
   },
   {
     id: "calculo-estructural",
@@ -43,6 +57,15 @@ export const SERVICES = [
     href: "/servicios/calculo-estructural",
     logo: structuralCalculationLogo,
     legend: "Seguridad y eficiencia en cada estructura",
+    carouselImages: [
+      structuralCalculation,
+      structuralCalculation,
+      structuralCalculation,
+      structuralCalculation,
+      structuralCalculation,
+      structuralCalculation,
+      structuralCalculation,
+    ],
   },
   {
     id: "direccion-y-asesoramiento",
@@ -60,6 +83,14 @@ export const SERVICES = [
     href: "/servicios/direccion-y-asesoramiento",
     logo: constructionManagementLogo,
     legend: "Gestión experta para el éxito de tu proyecto",
+    carouselImages: [
+      constructionManagement,
+      constructionManagement,
+      constructionManagement,
+      constructionManagement,
+      constructionManagement,
+      constructionManagement,
+    ],
   },
   {
     id: "fotografia-con-drones",
@@ -77,5 +108,12 @@ export const SERVICES = [
     href: "/servicios/fotografia-con-drones",
     logo: dronePhotographyLogo,
     legend: "Percisión y eficiencia en el levantamiento de datos",
+    carouselImages: [
+      dronePhotography,
+      dronePhotography,
+      dronePhotography,
+      dronePhotography,
+      dronePhotography,
+    ],
   },
 ];

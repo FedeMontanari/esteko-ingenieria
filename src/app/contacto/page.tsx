@@ -1,25 +1,28 @@
-"use client";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
 import { Slash } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { CONTACT_DATA } from "@/lib/constants/contact";
+
+import { Metadata } from "next";
+import ContactForm from "./_components/contact-form";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Contáctanos para más información",
+};
 
 export default function Contacto() {
   return (
     <main className="min-h-screen w-full">
+      {/* Hero section */}
       <div className="w-full">
-        <div className="flex flex-col justify-center bg-foreground h-[340px]">
+        <div className="flex flex-col justify-center bg-foreground h-[400px]">
           <nav className="flex flex-col items-center justify-center">
             <h1 className="text-5xl font-bold text-white">Contáctanos</h1>
             <Breadcrumb className="mt-4">
@@ -39,16 +42,16 @@ export default function Contacto() {
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="text-primary font-bold text-xl">
-                    Contacto
-                  </BreadcrumbPage>
+                <BreadcrumbItem className="text-primary font-bold text-lg">
+                  Contacto
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </nav>
         </div>
       </div>
+
+      {/* Contact form section */}
       <div className="flex items-center justify-center w-full py-24">
         <div
           className="bg-foreground text-white py-12 w-1/4"
@@ -72,20 +75,7 @@ export default function Contacto() {
         </div>
         <div className="w-1/2 mx-auto">
           <h3 className="sr-only">Formulario de contacto</h3>
-          <form className="flex flex-col gap-4">
-            <Input className="bg-[#eaeaea]" type="email" placeholder="Email" />
-            <Textarea
-              className="bg-[#eaeaea]"
-              rows={10}
-              placeholder="Tu mensaje"
-            />
-            <Button
-              className="w-1/2 self-center text-lg font-bold"
-              type="submit"
-            >
-              Enviar Mensaje
-            </Button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </main>
