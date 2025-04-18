@@ -14,6 +14,17 @@ import { Metadata } from "next";
 import { PageProps } from "../../../../.next/types/app/servicios/[name]/page";
 import ServiceContent from "./_components/service-content";
 
+interface OgApiResponse {
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
+}
+
+const API_IMG_SRC_MATCHER = "/server/assets/";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const params = await props.params;
   const service = SERVICES.find((service) => service.id === params.name);
@@ -22,12 +33,28 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     return notFound();
   }
 
+  const fetchImageUrl = await fetch(`${BASE_URL}/api/og?id=${service.id}`);
+  const imageUrlReponse = (await fetchImageUrl.json()) as OgApiResponse;
+  const imageFileName = imageUrlReponse.image.src.replace(
+    API_IMG_SRC_MATCHER,
+    ""
+  );
+
+  const imageUrl = encodeURIComponent(
+    `${BASE_URL}/_next/image?url=/_next/static/media/${imageFileName}&w=${imageUrlReponse.image.width}&q=75`
+  );
+
   return {
     title: `${service.title} | Esteko Ingeniería`,
     description: service.description,
     openGraph: {
       title: `${service.title} | Esteko Ingeniería`,
       description: service?.description,
+      images: [
+        {
+          url: imageUrl,
+        },
+      ],
     },
   };
 }
