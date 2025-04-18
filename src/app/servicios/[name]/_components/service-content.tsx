@@ -43,16 +43,10 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselContent>
             {service.carouselImages.map((image, index) => (
               <CarouselItem
-                className="h-fit flex items-center justify-center"
+                className="h-[400px] w-[600px] flex items-center justify-center"
                 key={index}
               >
-                <Image
-                  src={image}
-                  alt={service.title}
-                  width={600}
-                  height={450}
-                  className="object-cover w-full h-full"
-                />
+                <Image src={image} alt={service.title} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -60,7 +54,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             {Array.from({ length: count }).map((_, index) => (
               <button
                 key={index}
-                className={`h-[50px] w-[105px] transition-colors ${
+                className={`h-[50px] w-full transition-colors ${
                   index === current - 1 ? "bg-primary" : "bg-gray-400"
                 } hover:bg-primary hover:cursor-pointer`}
                 style={{

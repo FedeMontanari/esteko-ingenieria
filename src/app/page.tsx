@@ -59,7 +59,9 @@ export default function Home() {
                   className="text-lg font-bold px-12 text-white border border-primary"
                   asChild
                 >
-                  <Link href="/servicios">Investiga</Link>
+                  <Link href="/#services">
+                    Investiga
+                  </Link>
                 </Button>
               </div>
             </div>

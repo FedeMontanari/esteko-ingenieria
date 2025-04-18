@@ -61,7 +61,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="es">
+    <html lang="es" className="scroll-smooth">
       <body
         className={`antialiased ${montserrat.variable} ${akira.variable} flex flex-col min-h-screen relative pb-[340px]`}
       >
