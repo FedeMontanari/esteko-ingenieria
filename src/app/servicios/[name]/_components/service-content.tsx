@@ -29,6 +29,7 @@ export default function ServiceContent({ service }: { service: Service }) {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
   return (
     <div className="flex flex-col items-center justify-center">
       <h2 className="text-2xl font-bold">{service.legend}</h2>
