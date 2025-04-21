@@ -13,13 +13,15 @@ import { Metadata } from "next";
 import ContactForm from "./_components/contact-form";
 import contactImage from "@/assets/images/opengraph/contact.jpg";
 
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Contáctanos para más información",
-  openGraph: {
-    images: contactImage.src,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contacto",
+    description: "Contáctanos para más información",
+    openGraph: {
+      images: contactImage.src,
+    },
+  };
+}
 
 export default function Contacto() {
   return (
