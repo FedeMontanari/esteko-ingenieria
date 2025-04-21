@@ -14,8 +14,9 @@ export default function Footer({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8">
-        <div className="flex flex-col items-center justify-center gap-4 border-r border-white">
+      <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8 relative">
+        <div className="absolute bg-[#7C7C7C] w-[6px] left-1/2 -translate-x-1/2 h-[70%] top-0" />
+        <div className="flex flex-col items-center justify-center gap-4">
           <div className="flex flex-row items-center justify-center space-x-12">
             <Image
               src="/logo-primary.svg"
@@ -75,7 +76,8 @@ export default function Footer({ className }: { className?: string }) {
           </div>
         </div>
 
-        <div className="col-span-2 border-t border-white pt-4">
+        <div className="absolute bg-[#7C7C7C] w-full h-[6px] top-[70%]" />
+        <div className="col-span-2 pt-4">
           <p className="text-center text-sm">
             &copy; {new Date().getFullYear()} Esteko Ingeniería. Todos los
             derechos reservados.

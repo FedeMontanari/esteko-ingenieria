@@ -52,7 +52,16 @@ export default function Contacto() {
       </div>
 
       {/* Contact form section */}
-      <div className="flex items-center justify-center w-full py-24">
+      <div className="flex items-center justify-center w-full py-24 relative">
+        <div
+          className="absolute bg-[#1C1C1C] h-[700px] w-[calc(75%+1px)] top-0 right-0 -z-10 opacity-50"
+          style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 10% 100%)" }}
+        />
+
+        <div
+          className="absolute bg-white h-[700px] w-3/4 top-0 right-0 -z-10"
+          style={{ clipPath: "polygon(0 0, 100% 0%, 100% 100%, 10% 100%)" }}
+        />
         <div
           className="bg-foreground text-white py-12 w-1/4"
           style={{

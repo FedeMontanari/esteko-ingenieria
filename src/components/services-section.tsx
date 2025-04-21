@@ -9,10 +9,12 @@ export default function ServicesSection() {
       id="services"
     >
       <h2 className="text-5xl font-extrabold">Nuestros Servicios</h2>
-      <div className="w-full flex flex-col items-center justify-center gap-12 mt-24">
+      <div className="w-full flex flex-col items-center justify-center gap-12 mt-24 relative">
+        <div className="absolute bg-[#1C1C1C] w-[6px] h-full" />
         {SERVICES.map((service, i) => (
           <ServiceItemCard key={i} service={service} i={i} />
         ))}
+        <div className="absolute -bottom-12 bg-[#1C1C1C] w-[6px] h-full" />
       </div>
     </div>
   );
@@ -28,16 +30,18 @@ function ServiceItemCard({ service, i }: { service: Service; i: number }) {
       key={i}
     >
       <div className="w-1/2">
-        <h3 className="text-2xl font-bold">{service.title}</h3>
-        <p className="text-sm">{service.description}</p>
-        <ul className="list-disc list-inside">
-          {service.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <div className="px-12">
+          <h3 className="text-3xl font-bold mb-4">{service.title}</h3>
+          <p className="text-sm mb-4">{service.description}</p>
+          <ul className="list-disc list-inside">
+            {service.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
       <Link
-        className="relative w-1/2 h-[400px] hover:brightness-80 transition-all duration-300"
+        className="relative w-1/2 h-[400px] hover:brightness-80 transition-all duration-200"
         href={`/servicios/${service.id}`}
       >
         <Image
