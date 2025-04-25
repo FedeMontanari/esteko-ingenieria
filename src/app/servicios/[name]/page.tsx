@@ -50,13 +50,12 @@ export default async function ServicioPage({
     <main className="min-h-screen w-full">
       {/* Hero section */}
       <div className="relative w-full">
-        <Image
-          src={service.image}
-          alt={service.title}
-          width={1920}
-          height={1080}
+        <video
+          src={service.heroVideo}
+          autoPlay
+          muted
+          loop
           className="w-full h-[400px] object-cover brightness-50"
-          priority
         />
         <div className="absolute inset-0 bg-black/50" />
 
