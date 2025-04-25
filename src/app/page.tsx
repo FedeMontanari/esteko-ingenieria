@@ -13,7 +13,7 @@ export default function Home() {
         <h1 className="sr-only">Esteko Ingeniería</h1>
         <div className="flex flex-col items-center justify-center">
           {/* Hero */}
-          <div className="relative w-screen">
+          <div className="relative w-screen h-screen">
             <div className="inset-0 -z-10 absolute">
               <Image
                 src="/hero-full.jpg"
@@ -39,9 +39,9 @@ export default function Home() {
               <Image
                 src="/hero.png"
                 alt="Esteko Ingeniería"
-                width={550}
-                height={400}
-                className="w-full h-full p-8"
+                width={600}
+                height={450}
+                className="w-3/4 h-3/4 mx-auto py-24"
               />
               <p className="text-white text-center text-2xl">
                 Soluciones{" "}
@@ -59,9 +59,7 @@ export default function Home() {
                   className="text-lg font-bold px-12 text-white border border-primary"
                   asChild
                 >
-                  <Link href="/#services">
-                    Investiga
-                  </Link>
+                  <Link href="/#services">Investiga</Link>
                 </Button>
               </div>
             </div>
