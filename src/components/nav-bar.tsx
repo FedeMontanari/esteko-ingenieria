@@ -21,7 +21,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY <= 600) {
+      if (window.scrollY >= 600) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md h-22 w-full transition-all duration-1000 ${
-        isScrolled ? "bg-white/5" : "bg-primary/50"
+        isScrolled ? "bg-primary/50" : "bg-white/5"
       }`}
     >
       <div>
