@@ -22,7 +22,7 @@ export interface Service {
   heroVideo: string;
 }
 
-const heroVideoSrc = "/services-hero.mp4";
+const heroVideoSrc = "/services-hero.webm";
 
 export const SERVICES: Service[] = [
   {

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import AboutUs from "@/components/about-us";
+import AboutUsSection from "@/components/about-us-section";
 import ServicesSection from "@/components/services-section";
 
 export default function Home() {
@@ -10,17 +10,18 @@ export default function Home() {
       <h1 className="sr-only">Esteko Ingeniería</h1>
       <div className="flex flex-col items-center justify-center">
         {/* Hero */}
-        <div className="relative w-screen h-screen">
+        <div className="relative w-screen h-screen flex flex-col items-center justify-start md:block px-4 md:px-0">
           <div className="inset-0 -z-10 absolute">
-            <Image
-              src="/hero-full.jpg"
-              alt="Esteko Ingeniería"
-              width={4096}
-              height={2731}
-              className="w-full h-full object-cover"
-            />
+            <video
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover brightness-20"
+            >
+              <source src="/landing-hero.webm" type="video/webm" />
+            </video>
           </div>
-          <div
+          {/* <div
             className="absolute inset-0 -z-10 bg-black/60 w-[60%] h-full"
             style={{
               clipPath: "polygon(0 0, 100% 0%, 80% 100%, 0% 100%)",
@@ -29,25 +30,24 @@ export default function Home() {
           <div
             className="absolute inset-0 -z-10 bg-black/60 w-[80%] h-full"
             style={{
-              clipPath: "polygon(0 0, 100% 0%, 85% 100%, 0% 100%)",
+              0clipPath: "polygon(0 0, 100% 0%, 85% 100%, 0% 100%)",
             }}
-          />
-          <div className="w-1/2 px-12">
-            <Image
+          /> */}
+          <div className="w-full md:w-1/2 md:px-12 flex flex-col items-center justify-center h-full">
+            {/* <Image
               src="/hero.png"
               alt="Esteko Ingeniería"
               width={600}
               height={450}
-              className="w-3/4 h-3/4 mx-auto py-24"
-            />
-            <p className="text-white text-center text-2xl">
-              Soluciones{" "}
-              <span className="text-primary font-bold">innovadoras</span>,{" "}
-              <span className="text-primary font-bold">precisas</span> y{" "}
-              <span className="text-primary font-bold">modernas</span> para
-              potenciar tus proyectos de ingeniería.
+              className="w-2/3 h-2/3 mx-auto py-24 md:w-3/4 md:h-3/4"
+            /> */}
+            <p className="text-white text-center text-4xl font-bold">
+              Soluciones <span className="text-primary">innovadoras</span>,{" "}
+              <span className="text-primary">precisas</span> y{" "}
+              <span className="text-primary">modernas</span> para potenciar tus
+              proyectos de ingeniería.
             </p>
-            <div className="flex flex-col gap-4 items-center py-12">
+            <div className="flex flex-col gap-4 items-center py-12 md:flex-row">
               <Button className="text-lg font-bold px-12" asChild>
                 <Link href="/contacto">Trabajemos Juntos</Link>
               </Button>
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <AboutUs />
+      <AboutUsSection />
       <ServicesSection />
     </main>
   );
