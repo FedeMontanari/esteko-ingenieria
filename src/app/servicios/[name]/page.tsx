@@ -8,7 +8,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import Image from "next/image";
 import { Slash } from "lucide-react";
 import { Metadata } from "next";
 import { PageProps } from "../../../../.next/types/app/servicios/[name]/page";
@@ -55,11 +54,11 @@ export default async function ServicioPage({
           autoPlay
           muted
           loop
-          className="w-full h-[400px] object-cover brightness-50"
+          className="w-full h-[550px] object-cover brightness-50"
         />
         <div className="absolute inset-0 bg-black/50" />
 
-        <div
+        {/* <div
           className="bg-white w-[170px] h-full absolute right-0 top-0 flex items-center justify-center"
           style={{
             clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0% 50%)",
@@ -77,7 +76,7 @@ export default async function ServicioPage({
             width={100}
             height={100}
           />
-        </div>
+        </div> */}
 
         <div className="absolute inset-0 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="mb-4 flex flex-col items-center justify-center">

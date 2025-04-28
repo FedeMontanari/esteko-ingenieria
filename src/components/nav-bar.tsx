@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md h-22 w-full transition-all duration-1000 ${
-        isScrolled ? "bg-primary/50" : "bg-white/5"
+        isScrolled ? "bg-primary/70" : "bg-white/5"
       }`}
     >
       <div>
@@ -83,8 +83,12 @@ export default function NavBar() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-screen flex justify-evenly items-start h-[215px]">
-              <div className="flex flex-col gap-2">
+            <PopoverContent
+              className={`w-screen flex justify-evenly items-start h-[215px] backdrop-blur-md transition-colors duration-1000 mt-5 ${
+                isScrolled ? "bg-primary/70" : "bg-white/5"
+              }`}
+            >
+              <div className="flex flex-col gap-2 text-white">
                 <h3 className="text-2xl font-bold">Nosotros</h3>
                 <Link
                   onClick={() => setOpen(false)}
@@ -95,7 +99,7 @@ export default function NavBar() {
                 </Link>
               </div>
               <Separator orientation="vertical" />
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 text-white">
                 <h3 className="text-2xl font-bold">Servicios</h3>
                 {SERVICES.map((service) => (
                   <Link

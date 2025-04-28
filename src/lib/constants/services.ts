@@ -22,7 +22,6 @@ export interface Service {
   heroVideo: string;
 }
 
-const heroVideoSrc = "/services-hero.webm";
 
 export const SERVICES: Service[] = [
   {
@@ -43,7 +42,7 @@ export const SERVICES: Service[] = [
     logo: bimLogo,
     legend: "Optimiza tus proyectos con nuestra Consultoría BIM",
     carouselImages: [bim, bim, bim, bim, bim],
-    heroVideo: heroVideoSrc,
+    heroVideo: "/bim-hero.webm",
   },
   {
     id: "calculo-estructural",
@@ -70,7 +69,7 @@ export const SERVICES: Service[] = [
       structuralCalculation,
       structuralCalculation,
     ],
-    heroVideo: heroVideoSrc,
+    heroVideo: "/structural-calculation-hero.webm",
   },
   {
     id: "direccion-y-asesoramiento",
@@ -96,7 +95,7 @@ export const SERVICES: Service[] = [
       constructionManagement,
       constructionManagement,
     ],
-    heroVideo: heroVideoSrc,
+    heroVideo: "/construction-management-hero.webm",
   },
   {
     id: "fotografia-con-drones",
@@ -121,6 +120,6 @@ export const SERVICES: Service[] = [
       dronePhotography,
       dronePhotography,
     ],
-    heroVideo: heroVideoSrc,
+    heroVideo: "/drone-photography-hero.webm",
   },
 ];
