@@ -10,11 +10,11 @@ export default function ServicesSection() {
     >
       <h2 className="text-5xl font-extrabold">Nuestros Servicios</h2>
       <div className="w-full flex flex-col items-center justify-center gap-12 mt-24 relative">
-        <div className="absolute bg-[#1C1C1C] w-[6px] h-full" />
+        {/* <div className="absolute bg-[#1C1C1C] w-[6px] h-full" /> */}
         {SERVICES.map((service, i) => (
           <ServiceItemCard key={i} service={service} i={i} />
         ))}
-        <div className="absolute -bottom-12 bg-[#1C1C1C] w-[6px] h-full" />
+        {/* <div className="absolute -bottom-12 bg-[#1C1C1C] w-[6px] h-full" /> */}
       </div>
     </div>
   );
@@ -95,13 +95,13 @@ function ItemCardFlare({
             clipPath,
           }}
         >
-          <span
+          {/* <span
             className={`text-white text-7xl font-bold absolute top-5 ${
               isOdd ? "left-9" : "right-9"
             }`}
           >
             {i + 1}
-          </span>
+          </span> */}
           <Image
             src={service.logo}
             alt={service.title}

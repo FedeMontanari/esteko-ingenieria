@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import AboutUsSection from "@/components/about-us-section";
 import ServicesSection from "@/components/services-section";

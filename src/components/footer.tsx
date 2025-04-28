@@ -15,7 +15,7 @@ export default function Footer({ className }: { className?: string }) {
       )}
     >
       <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8 relative">
-        <div className="absolute bg-[#7C7C7C] w-[6px] left-1/2 -translate-x-1/2 h-[70%] top-0" />
+        {/* <div className="absolute bg-[#7C7C7C] w-[6px] left-1/2 -translate-x-1/2 h-[70%] top-0" /> */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="flex flex-row items-center justify-center space-x-12">
             <Image
@@ -76,7 +76,7 @@ export default function Footer({ className }: { className?: string }) {
           </div>
         </div>
 
-        <div className="absolute bg-[#7C7C7C] w-full h-[6px] top-[70%]" />
+        <div className="absolute bg-[#7C7C7C] w-full h-[1px] top-[72%]" />
         <div className="col-span-2 pt-4">
           <p className="text-center text-sm">
             &copy; {new Date().getFullYear()} Esteko Ingeniería. Todos los
