@@ -51,7 +51,7 @@ function ServiceItemCard({ service, i }: { service: Service; i: number }) {
           height={640}
           className="object-cover brightness-50 h-full w-full"
         />
-        <ItemCardFlare isOdd={isOdd} i={i} service={service} />
+        <ItemCardFlare isOdd={isOdd} service={service} />
         <span
           className={`absolute bottom-0 w-[calc(100%-150px)] h-[60px] text-white text-2xl font-bold bg-primary flex items-center justify-center ${
             isOdd ? "right-0" : "left-0"
@@ -66,11 +66,9 @@ function ServiceItemCard({ service, i }: { service: Service; i: number }) {
 
 function ItemCardFlare({
   isOdd,
-  i,
   service,
 }: {
   isOdd: boolean;
-  i: number;
   service: Service;
 }) {
   const clipPath = isOdd
