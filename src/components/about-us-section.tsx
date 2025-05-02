@@ -2,6 +2,7 @@
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
+import { Separator } from "./ui/separator";
 
 export default function AboutUsSection() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -101,6 +102,22 @@ export default function AboutUsSection() {
                 width={60}
                 height={60}
               />
+            </div>
+            <div className="mt-4">
+              <p className="px-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio aut, blanditiis omnis alias modi, obcaecati
+                repellendus animi error harum natus deserunt. Repudiandae
+                delectus soluta voluptatem perspiciatis accusantium. Officia,
+                excepturi reiciendis.
+              </p>
+              <Separator className="bg-primary my-12" />
+              <p className="px-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Expedita a, quisquam ipsam sint nostrum mollitia dolor quae modi
+                molestias consequatur ex, eos maiores officiis neque earum nemo
+                aliquam, blanditiis dolore?
+              </p>
             </div>
           </div>
         </>

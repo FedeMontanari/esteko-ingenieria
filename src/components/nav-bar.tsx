@@ -39,9 +39,9 @@ export default function NavBar() {
 
   return (
     <div
-      className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md h-22 w-full transition-all duration-1000 ${
+      className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md w-[100vw] transition-all duration-1000 ${
         isScrolled ? "bg-primary/70" : "bg-white/5"
-      }`}
+      } ${isDesktop ? "h-22" : "h-16"}`}
     >
       <div>
         <h1 className="sr-only">Esteko Ingeniería</h1>
@@ -116,7 +116,7 @@ export default function NavBar() {
           </Popover>
         </div>
       ) : (
-        <Popover open={open} onOpenChange={setOpen}>
+        <Popover open={open} onOpenChange={setOpen} modal={true}>
           <PopoverTrigger>
             <Menu width={24} height={24} className="w-8 h-8 mr-4" />
           </PopoverTrigger>
