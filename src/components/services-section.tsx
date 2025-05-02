@@ -8,7 +8,9 @@ export default function ServicesSection() {
       className="flex flex-col flex-wrap w-full pt-12 items-center justify-center max-w-7xl mx-auto"
       id="services"
     >
-      <h2 className="text-5xl font-extrabold">Nuestros Servicios</h2>
+      <h2 className="text-5xl font-extrabold font-cooper">
+        Nuestros Servicios
+      </h2>
       <div className="w-full flex flex-col items-center justify-center gap-12 mt-24 relative">
         {/* <div className="absolute bg-[#1C1C1C] w-[6px] h-full" /> */}
         {SERVICES.map((service, i) => (
@@ -31,7 +33,7 @@ function ServiceItemCard({ service, i }: { service: Service; i: number }) {
     >
       <div className="w-1/2">
         <div className="px-12">
-          <h3 className="text-3xl font-bold mb-4">{service.title}</h3>
+          <h3 className="text-3xl font-bold mb-4 font-cooper">{service.title}</h3>
           <p className="text-sm mb-4">{service.description}</p>
           <ul className="list-disc list-inside">
             {service.items.map((item) => (

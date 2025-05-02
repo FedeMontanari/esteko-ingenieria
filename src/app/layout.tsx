@@ -43,7 +43,7 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${montserrat.variable} ${akira.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden`}
+          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden`}
         >
           <h1 className="text-white text-2xl absolute bottom-12">
             En Construcción

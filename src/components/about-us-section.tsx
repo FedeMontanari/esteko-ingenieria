@@ -6,12 +6,12 @@ import Image from "next/image";
 export default function AboutUsSection() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
-    <>
+    <div className="bg-gradient-to-b from-white to-[#f4f4f4] py-12">
       {isDesktop ? (
         <div className="flex flex-col flex-wrap w-full my-24 px-12 h-fit">
           <div className="h-[200px] w-full flex flex-row">
             <div className="w-1/2 flex flex-col justify-center items-center">
-              <h2 className="text-5xl font-bold">
+              <h2 className="text-5xl font-bold font-cooper">
                 Somos{" "}
                 <span className="font-akira text-5xl text-primary">ESTEKO</span>
               </h2>
@@ -105,6 +105,6 @@ export default function AboutUsSection() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
