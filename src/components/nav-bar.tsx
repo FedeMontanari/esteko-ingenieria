@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md w-[100vw] transition-all duration-1000 ${
-        isScrolled ? "bg-primary/70" : "bg-white/20"
+        isScrolled ? "bg-primary/80" : "bg-white/20"
       } ${isDesktop ? "h-22" : "h-16"}`}
     >
       <div>
