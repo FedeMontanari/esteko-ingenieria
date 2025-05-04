@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md w-[100vw] transition-all duration-1000 ${
-        isScrolled ? "bg-primary/70" : "bg-white/5"
+        isScrolled ? "bg-primary/70" : "bg-white/20"
       } ${isDesktop ? "h-22" : "h-16"}`}
     >
       <div>
@@ -53,9 +53,8 @@ export default function NavBar() {
             <Image
               src="/logo.svg"
               alt="Esteko Ingeniería"
-              width={100}
+              width={250}
               height={100}
-              className="w-10 h-10"
             />
           </Link>
         </Button>
