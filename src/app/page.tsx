@@ -40,19 +40,19 @@ export default function Home() {
               height={450}
               className="w-2/3 h-2/3 mx-auto py-24 md:w-3/4 md:h-3/4"
             /> */}
-            <p className="text-white text-center text-4xl font-bold">
+            <p className="text-white text-start text-5xl font-semibold leading-tight w-3/4">
               Soluciones <span className="text-primary">innovadoras</span>,{" "}
               <span className="text-primary">precisas</span> y{" "}
               <span className="text-primary">modernas</span> para potenciar tus
               proyectos de ingeniería.
             </p>
-            <div className="flex flex-col gap-4 items-center py-12 md:flex-row">
-              <Button className="text-lg font-bold px-12" asChild>
+            <div className="flex flex-col gap-4 items-start justify-start py-12 w-3/4 space-y-4">
+              <Button className="text-lg font-bold px-12 w-1/2" asChild>
                 <Link href="/contacto">Trabajemos Juntos</Link>
               </Button>
               <Button
                 variant="ghost"
-                className="text-lg font-bold px-12 text-white border border-primary"
+                className="text-lg font-bold px-12 text-white border border-primary w-1/2"
                 asChild
               >
                 <Link href="/#services">Investiga</Link>
