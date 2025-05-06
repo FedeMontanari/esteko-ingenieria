@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AboutUsSection from "@/components/about-us-section";
 import ServicesSection from "@/components/services-section";
+import ContactSection from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -63,6 +64,7 @@ export default function Home() {
       </div>
       <AboutUsSection />
       <ServicesSection />
+      <ContactSection />
     </main>
   );
 }
