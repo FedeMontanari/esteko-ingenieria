@@ -7,10 +7,21 @@ import { Separator } from "./ui/separator";
 export default function AboutUsSection() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
-    <div className="bg-gradient-to-b from-white to-[#f4f4f4] py-12">
+    <div className="py-12">
       {isDesktop ? (
-        <div className="flex flex-col flex-wrap w-full my-24 px-12 h-fit">
-          <div className="h-[200px] w-full flex flex-row">
+        <div className="flex w-1/2 my-24 px-12 bg-primary h-[500px] items-center justify-start">
+          <h3 className="text-4xl font-semibold font-akira text-white">
+            PORQUE ESTEKO
+          </h3>
+          <div className="w-1/3 bg-white p-24 absolute left-[60%] -translate-x-1/2 border-primary border-2">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi,
+              ea quia, accusamus officia quae iusto numquam obcaecati nulla id
+              nemo laudantium provident repudiandae facere corrupti est sit
+              quibusdam vero quisquam.
+            </p>
+          </div>
+          {/* <div className="h-[200px] w-full flex flex-row">
             <div className="w-1/2 flex flex-col justify-center items-center">
               <h2 className="text-5xl font-bold font-cooper">
                 Somos{" "}
@@ -85,7 +96,7 @@ export default function AboutUsSection() {
                 height={120}
               />
             </div>
-          </div>
+          </div> */}
         </div>
       ) : (
         <>
