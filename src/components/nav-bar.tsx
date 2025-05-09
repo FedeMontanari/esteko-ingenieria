@@ -10,7 +10,7 @@ import {
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ChevronDown, ChevronUp, Menu } from "lucide-react";
+import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 import { SERVICES } from "@/lib/constants/services";
 import { Separator } from "./ui/separator";
 import { useMediaQuery } from "@/hooks/use-media-query";
@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md w-[100vw] transition-all duration-1000 ${
-        isScrolled ? "bg-primary/80" : "bg-white/20"
+        isScrolled ? "bg-primary/80" : "bg-[#7C7C7C]/95"
       } ${isDesktop ? "h-22" : "h-16"}`}
     >
       <div>
@@ -53,8 +53,8 @@ export default function NavBar() {
             <Image
               src="/logo.svg"
               alt="Esteko Ingeniería"
-              width={250}
-              height={100}
+              width={isDesktop ? 250 : 150}
+              height={isDesktop ? 100 : 60}
             />
           </Link>
         </Button>
@@ -117,21 +117,21 @@ export default function NavBar() {
       ) : (
         <Popover open={open} onOpenChange={setOpen} modal={true}>
           <PopoverTrigger>
-            <Menu width={24} height={24} className="w-8 h-8 mr-4" />
+            {open ? (
+              <X width={24} height={24} className="w-8 h-8 mr-4" />
+            ) : (
+              <Menu width={24} height={24} className="w-8 h-8 mr-4" />
+            )}
           </PopoverTrigger>
-          <PopoverContent className="w-screen flex flex-col justify-start items-start h-screen">
+          <PopoverContent className="w-screen flex flex-col justify-start items-center h-screen bg-[#7C7C7C] border-none mt-3">
             <div className="flex flex-col gap-2 space-y-3">
-              <h3 className="text-4xl font-bold">Servicios</h3>
-              {SERVICES.map((service) => (
-                <Link
-                  className="text-2xl"
-                  key={service.id}
-                  href={`/servicios/${service.id}`}
-                  onClick={() => setOpen(false)}
-                >
-                  {service.title}
-                </Link>
-              ))}
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="text-4xl font-bold"
+              >
+                Inicio
+              </Link>
             </div>
             <Separator
               orientation="horizontal"
@@ -146,6 +146,23 @@ export default function NavBar() {
               >
                 Contáctanos
               </Link>
+            </div>
+            <Separator
+              orientation="horizontal"
+              className="w-full my-8 bg-black"
+            />
+            <div className="flex flex-col gap-2 space-y-3 items-center justify-center">
+              <h3 className="text-4xl font-bold">Servicios</h3>
+              {SERVICES.map((service) => (
+                <Link
+                  className="text-2xl"
+                  key={service.id}
+                  href={`/servicios/${service.id}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {service.title}
+                </Link>
+              ))}
             </div>
           </PopoverContent>
         </Popover>
