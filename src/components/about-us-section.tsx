@@ -1,19 +1,19 @@
 "use client";
 
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { useIsDesktop } from "@/hooks/use-media-query";
 import Image from "next/image";
 import { Separator } from "./ui/separator";
 
 export default function AboutUsSection() {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useIsDesktop();
   return (
     <div className="py-12">
       {isDesktop ? (
-        <div className="flex w-1/2 my-24 px-12 bg-primary h-[500px] items-center justify-start">
-          <h3 className="text-4xl font-semibold font-akira text-white">
+        <div className="bg-primary my-24 flex h-[500px] w-1/2 items-center justify-start px-12">
+          <h3 className="font-akira text-4xl font-semibold text-white">
             PORQUE ESTEKO
           </h3>
-          <div className="w-1/3 bg-white p-24 absolute left-[60%] -translate-x-1/2 border-primary border-2">
+          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-white p-24">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi,
               ea quia, accusamus officia quae iusto numquam obcaecati nulla id
@@ -100,12 +100,12 @@ export default function AboutUsSection() {
         </div>
       ) : (
         <>
-          <div className="flex flex-col flex-wrap w-full my-24 h-fit">
+          <div className="my-24 flex h-fit w-full flex-col flex-wrap">
             <div className="flex w-full items-center justify-around">
               <h2 className="text-4xl font-bold">
                 Somos
                 <br />
-                <span className="font-akira text-4xl text-primary">ESTEKO</span>
+                <span className="font-akira text-primary text-4xl">ESTEKO</span>
               </h2>
               <Image
                 src="/logo-primary.svg"

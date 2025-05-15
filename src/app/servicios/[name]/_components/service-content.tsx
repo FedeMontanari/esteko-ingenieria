@@ -33,7 +33,7 @@ export default function ServiceContent({ service }: { service: Service }) {
   return (
     <div className="flex flex-col items-center justify-center">
       <h2 className="text-2xl font-bold">{service.legend}</h2>
-      <div className="pt-12 w-3/4">
+      <div className="w-3/4 pt-12">
         <Carousel
           setApi={setApi}
           className="float-left mr-12 w-1/2"
@@ -44,14 +44,14 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselContent>
             {service.carouselImages.map((image, index) => (
               <CarouselItem
-                className="h-[400px] w-[600px] flex items-center justify-center"
+                className="flex h-[400px] w-[600px] items-center justify-center"
                 key={index}
               >
                 <Image src={image} alt={service.title} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="w-full flex justify-center py-1">
+          <div className="flex w-full justify-center py-1">
             {Array.from({ length: count }).map((_, index) => (
               <button
                 key={index}
@@ -73,7 +73,7 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
         </Carousel>
         <p className="text-lg">{service.description}</p>
-        <ul className="list-disc list-inside py-4">
+        <ul className="list-inside list-disc py-4">
           {service.items.map((item) => (
             <li key={item}>{item}</li>
           ))}

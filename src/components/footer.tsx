@@ -7,20 +7,20 @@ import { cn } from "@/lib/utils";
 import { SERVICES } from "@/lib/constants/services";
 import { CONTACT_DATA } from "@/lib/constants/contact";
 import { Separator } from "./ui/separator";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { useIsDesktop } from "@/hooks/use-media-query";
 
 export default function Footer({ className }: { className?: string }) {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useIsDesktop();
 
   return (
     <footer
       className={cn(
-        "bg-foreground text-white absolute bottom-0 left-0 right-0 w-full z-10",
-        className
+        "bg-foreground absolute right-0 bottom-0 left-0 z-10 w-full text-white",
+        className,
       )}
     >
       {isDesktop ? (
-        <div className="grid grid-cols-2 gap-4 w-full mx-auto items-center justify-center py-8 relative">
+        <div className="relative mx-auto grid w-full grid-cols-2 items-center justify-center gap-4 py-8">
           {/* <div className="absolute bg-[#7C7C7C] w-[6px] left-1/2 -translate-x-1/2 h-[70%] top-0" /> */}
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-row items-center justify-center space-x-12">
@@ -82,13 +82,13 @@ export default function Footer({ className }: { className?: string }) {
             </div>
           </div>
 
-          <div className="absolute bg-[#7C7C7C] w-full h-[1px] top-[72%]" />
+          <div className="absolute top-[72%] h-[1px] w-full bg-[#7C7C7C]" />
           <div className="col-span-2 pt-4">
             <p className="text-center text-sm">
               &copy; {new Date().getFullYear()} Esteko Ingeniería. Todos los
               derechos reservados.
             </p>
-            <div className="text-center text-sm text-muted-foreground h-5 flex flex-row items-center justify-center space-x-2">
+            <div className="text-muted-foreground flex h-5 flex-row items-center justify-center space-x-2 text-center text-sm">
               <p>
                 Diseño -{" "}
                 <Link
@@ -100,7 +100,7 @@ export default function Footer({ className }: { className?: string }) {
                   Nicolás Silva
                 </Link>
               </p>
-              <Separator orientation="vertical" className="h-full inline" />
+              <Separator orientation="vertical" className="inline h-full" />
               <p>
                 Desarrollo -{" "}
                 <Link
@@ -117,15 +117,15 @@ export default function Footer({ className }: { className?: string }) {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-start justify-center gap-4 px-12 py-8 relative">
-          <div className="flex flex-col items-start justify-evenly gap-4 mb-4">
+        <div className="relative flex flex-col items-start justify-center gap-4 px-12 py-8">
+          <div className="mb-4 flex flex-col items-start justify-evenly gap-4">
             <div>
-              <Link className="text-3xl font-semibold font-cooper" href="/">
+              <Link className="font-cooper text-3xl font-semibold" href="/">
                 Inicio
               </Link>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-3xl font-semibold font-cooper">Servicios</p>
+              <p className="font-cooper text-3xl font-semibold">Servicios</p>
               {SERVICES.map((service) => (
                 <Link
                   key={service.id}
@@ -138,7 +138,7 @@ export default function Footer({ className }: { className?: string }) {
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-3xl font-semibold font-cooper">Nosotros</p>
+              <p className="font-cooper text-3xl font-semibold">Nosotros</p>
               <Link className="font-cooper" href="/contacto">
                 Contactanos
               </Link>
@@ -153,13 +153,13 @@ export default function Footer({ className }: { className?: string }) {
                 width={60}
                 height={60}
               />
-              <div className="space-y-2 font-cooper">
+              <div className="font-cooper space-y-2">
                 <p>{CONTACT_DATA.email}</p>
                 <p>{CONTACT_DATA.phone}</p>
                 <p>{CONTACT_DATA.address}</p>
               </div>
             </div>
-            <div className="flex flex-row gap-4 mt-4">
+            <div className="mt-4 flex flex-row gap-4">
               <span className="font-cooper text-xl font-semibold">
                 Seguinos en
               </span>
@@ -182,7 +182,7 @@ export default function Footer({ className }: { className?: string }) {
           <Separator className="w-full" />
 
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="text-center text-sm text-muted-foreground flex flex-row items-center justify-center space-x-2 flex-wrap">
+            <div className="text-muted-foreground flex flex-row flex-wrap items-center justify-center space-x-2 text-center text-sm">
               <p className="font-cooper">
                 Diseño -{" "}
                 <Link

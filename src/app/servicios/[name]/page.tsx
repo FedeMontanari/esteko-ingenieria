@@ -10,12 +10,15 @@ import {
 
 import { Slash } from "lucide-react";
 import { Metadata } from "next";
-import { PageProps } from "../../../../.next/types/app/servicios/[name]/page";
 import ServiceContent from "./_components/service-content";
 
-export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const params = await props.params;
-  const service = SERVICES.find((service) => service.id === params.name);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
+  const { name } = await params;
+  const service = SERVICES.find((service) => service.id === name);
 
   if (!service) {
     return notFound();
@@ -54,7 +57,7 @@ export default async function ServicioPage({
           autoPlay
           muted
           loop
-          className="w-full h-[550px] object-cover brightness-50"
+          className="h-[550px] w-full object-cover brightness-50"
         />
         <div className="absolute inset-0 bg-black/50" />
 
@@ -78,14 +81,14 @@ export default async function ServicioPage({
           />
         </div> */}
 
-        <div className="absolute inset-0 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
           <nav className="mb-4 flex flex-col items-center justify-center">
             <h1 className="text-5xl font-bold text-white">{service.title}</h1>
             <Breadcrumb className="mt-4">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink
-                    className="text-white hover:text-white/80 text-lg"
+                    className="text-lg text-white hover:text-white/80"
                     href="/"
                   >
                     Inicio
@@ -94,7 +97,7 @@ export default async function ServicioPage({
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
-                <BreadcrumbItem className="text-white text-lg">
+                <BreadcrumbItem className="text-lg text-white">
                   Servicios
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>

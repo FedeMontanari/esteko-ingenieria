@@ -43,9 +43,9 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden`}
+          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} bg-foreground flex h-full w-full items-center justify-center overflow-hidden`}
         >
-          <h1 className="text-white text-2xl absolute bottom-12">
+          <h1 className="absolute bottom-12 text-2xl text-white">
             En Construcción
           </h1>
           <Image
@@ -68,7 +68,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} flex flex-col min-h-screen relative pb-[715px] md:pb-[300px]`}
+        className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} relative flex min-h-screen flex-col pb-[715px] md:pb-[300px]`}
       >
         <NavBar />
         {children}

@@ -22,7 +22,6 @@ export interface Service {
   heroVideo: string;
 }
 
-
 export const SERVICES: Service[] = [
   {
     id: "consultoria-bim",
@@ -30,12 +29,11 @@ export const SERVICES: Service[] = [
     description:
       "Modelado, gestión y coordinación B.I.M. para mejorar el diseño, planificación y ejecución de proyectos.",
     items: [
-      "Modelado 3D de arquitectura, estructuras e instalaciones.",
-      "Coordinación y detección de interferencias.",
-      "Gestión de información y documentación técnica.",
-      "Optimización de procesos constructivos.",
-      "Generación de planos y mediciones automatizadas.",
-      "Implementación y capacitación en metodología BIM.",
+      "Modelado y coordinación BIM en todas las etapas del proyecto: diseño, construcción y operación.",
+      "Implementación de flujos colaborativos y detección temprana de interferencias (Clash Detection).",
+      "Integración de relevamientos con drones para la generación de modelos As-Built precisos y actualizados.",
+      "Generación de documentación técnica, planificación 4D y análisis de costos 5D.",
+      "Acompañamiento estratégico en procesos de adopción BIM para estudios, desarrolladoras y constructoras.",
     ],
     image: bim,
     href: "/servicios/consultoria-bim",
@@ -50,11 +48,10 @@ export const SERVICES: Service[] = [
     description:
       "Análisis y diseño estructural para todo tipo de obras civiles, cumpliendo con la normativa vigente.",
     items: [
-      "Diseño y verificación de estructuras de hormigón, acero y madera",
-      "Análisis sísmico y de cargas según normativas vigentes",
-      "Optimización de materiales y costos de construcción",
-      "Modelado y simulaciones estructurales avanzadas",
-      "Generación de planos y memorias de cálculo",
+      "Análisis, diseño y verificación estructural para obras civiles, industriales y residenciales, abarcando sistemas de hormigón armado, steel frame, wood frame, paneles SIP y estructuras mixtas.",
+      "Optimización estructural orientada a la eficiencia constructiva, minimización de desperdicios y reducción de costos.",
+      "Desarrollo completo de documentación técnica: planos estructurales, detalles constructivos, memorias de cálculo y cómputos de materiales.",
+      "Elaboración de informes técnicos e inspecciones estructurales en obra.",
     ],
     image: structuralCalculation,
     href: "/servicios/calculo-estructural",
@@ -77,11 +74,12 @@ export const SERVICES: Service[] = [
     description:
       "Dirección de obra, asesoramiento técnico, control de calidad y seguimiento de obras.",
     items: [
-      "Supervisión y gestión integral de obras",
-      "Control de calidad en materiales y procesos constructivos",
-      "Cumplimiento de normativas y seguridad en obra",
-      "Asesoramiento técnico para optimización de costos y tiempos",
-      "Coordinación de contratistas y logística de obra",
+      "Supervisión técnica durante la ejecución para garantizar calidad y cumplimiento del proyecto.",
+      "Control de calidad en materiales y procesos constructivos.",
+      "Revisión de documentación y verificación en campo de estructuras y procesos constructivos.",
+      "Coordinación con contratistas y equipos técnicos para una ejecución eficiente y segura.",
+      "Control de avances, cumplimiento normativo y asistencia en toma de decisiones técnicas en obra.",
+      "Asesoramiento técnico para optimización de costos y tiempos.",
     ],
     image: constructionManagement,
     href: "/servicios/direccion-y-asesoramiento",
@@ -101,13 +99,15 @@ export const SERVICES: Service[] = [
     id: "fotografia-con-drones",
     title: "Fotogrametría con drones",
     description:
-      "Digitalización de obras y terrenos para el análisis y toma de decisiones",
+      "Digitalización de obras y terrenos para el análisis y toma de decisiones.",
     items: [
-      "Levantamientos topográficos de alta precisión",
-      "Modelado 3D y generación de ortomosaicos",
-      "Monitoreo y seguimiento de avance de obras",
-      "Cálculo de volúmenes y mediciones geoespaciales",
-      "Inspección técnica con imágenes aéreas de alta resolución",
+      "Relevamiento aéreo de terrenos y obras para digitalización y análisis técnico.",
+      "Generación de nubes de puntos, ortomosaicos, modelos digitales de terreno (DTM) y de elevación (DSM).",
+      "Medición de acopios, control de volúmenes y elaboración de informes de producción en canteras, plantas de hormigón, operaciones mineras y proyectos energéticos.",
+      "Seguimiento de obra mediante vuelos periódicos para control de avance y comparación con planificación.",
+      "Documentación AS-BUILT para registrar el estado actual de edificaciones y estructuras.",
+      "Cálculo y verificación de movimientos de suelo para planificación y control de ejecución.",
+      "Inspección técnica en líneas eléctricas y zonas de difícil acceso.",
     ],
     image: dronePhotography,
     href: "/servicios/fotografia-con-drones",

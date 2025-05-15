@@ -17,3 +17,11 @@ export function useMediaQuery(query: string) {
 
   return value;
 }
+
+export function useIsMobile() {
+  return useMediaQuery("(max-width: 680px)");
+}
+
+export function useIsDesktop() {
+  return useMediaQuery("(min-width: 680px)");
+}

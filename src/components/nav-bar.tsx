@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 import { SERVICES } from "@/lib/constants/services";
 import { Separator } from "./ui/separator";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { useIsDesktop } from "@/hooks/use-media-query";
 
 export default function NavBar() {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useIsDesktop();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`flex items-center justify-between fixed top-0 z-50 backdrop-blur-md w-[100vw] transition-all duration-1000 ${
+      className={`fixed top-0 z-50 flex w-[100vw] items-center justify-between backdrop-blur-md transition-all duration-1000 ${
         isScrolled ? "bg-primary/80" : "bg-[#7C7C7C]/95"
       } ${isDesktop ? "h-22" : "h-16"}`}
     >
@@ -48,13 +48,13 @@ export default function NavBar() {
         <Button variant="link" asChild>
           <Link
             href="/"
-            className="flex items-center justify-center w-fit h-fit"
+            className="flex h-fit w-fit items-center justify-center"
           >
             <Image
               src="/logo.svg"
               alt="Esteko Ingeniería"
-              width={isDesktop ? 250 : 150}
-              height={isDesktop ? 100 : 60}
+              width={isDesktop ? 200 : 150}
+              height={isDesktop ? 80 : 60}
             />
           </Link>
         </Button>
@@ -72,19 +72,19 @@ export default function NavBar() {
             <PopoverTrigger asChild>
               <Button
                 variant="link"
-                className="text-lg font-bold text-white flex items-center gap-2"
+                className="flex items-center gap-2 text-lg font-bold text-white"
               >
                 Menu
                 {open ? (
-                  <ChevronUp className="w-4 h-4" />
+                  <ChevronUp className="h-4 w-4" />
                 ) : (
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="h-4 w-4" />
                 )}
               </Button>
             </PopoverTrigger>
             <PopoverContent
-              className={`w-screen flex justify-evenly items-start h-[215px] backdrop-blur-md transition-colors duration-1000 mt-5 ${
-                isScrolled ? "bg-primary/70" : "bg-white/5"
+              className={`mt-5 flex h-[215px] w-screen items-start justify-evenly border-none backdrop-blur-md transition-colors duration-1000 ${
+                isScrolled ? "bg-primary/80" : "bg-[#7C7C7C]/95"
               }`}
             >
               <div className="flex flex-col gap-2 text-white">
@@ -118,12 +118,12 @@ export default function NavBar() {
         <Popover open={open} onOpenChange={setOpen} modal={true}>
           <PopoverTrigger>
             {open ? (
-              <X width={24} height={24} className="w-8 h-8 mr-4" />
+              <X width={24} height={24} className="mr-4 h-8 w-8" />
             ) : (
-              <Menu width={24} height={24} className="w-8 h-8 mr-4" />
+              <Menu width={24} height={24} className="mr-4 h-8 w-8" />
             )}
           </PopoverTrigger>
-          <PopoverContent className="w-screen flex flex-col justify-start items-center h-screen bg-[#7C7C7C] border-none mt-3">
+          <PopoverContent className="mt-3 flex h-screen w-screen flex-col items-center justify-start border-none bg-[#7C7C7C]">
             <div className="flex flex-col gap-2 space-y-3">
               <Link
                 href="/"
@@ -135,7 +135,7 @@ export default function NavBar() {
             </div>
             <Separator
               orientation="horizontal"
-              className="w-full my-8 bg-black"
+              className="my-8 w-full bg-black"
             />
             <div className="flex flex-col gap-2 space-y-3">
               <h3 className="text-4xl font-bold">Nosotros</h3>
@@ -149,9 +149,9 @@ export default function NavBar() {
             </div>
             <Separator
               orientation="horizontal"
-              className="w-full my-8 bg-black"
+              className="my-8 w-full bg-black"
             />
-            <div className="flex flex-col gap-2 space-y-3 items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-2 space-y-3">
               <h3 className="text-4xl font-bold">Servicios</h3>
               {SERVICES.map((service) => (
                 <Link

@@ -10,13 +10,13 @@ export default function Home() {
       <h1 className="sr-only">Esteko Ingeniería</h1>
       <div className="flex flex-col items-center justify-center">
         {/* Hero */}
-        <div className="relative w-screen h-screen flex flex-col items-center justify-start md:block px-4 md:px-0">
-          <div className="inset-0 -z-10 absolute">
+        <div className="relative flex h-screen w-screen flex-col items-center justify-start px-4 md:block md:px-0">
+          <div className="absolute inset-0 -z-10">
             <video
               autoPlay
               muted
               loop
-              className="w-full h-full object-cover brightness-20"
+              className="h-full w-full object-cover brightness-20"
             >
               <source src="/landing-hero.webm" type="video/webm" />
             </video>
@@ -33,7 +33,7 @@ export default function Home() {
               0clipPath: "polygon(0 0, 100% 0%, 85% 100%, 0% 100%)",
             }}
           /> */}
-          <div className="w-full md:w-1/2 md:px-12 flex flex-col items-center justify-center h-full">
+          <div className="flex h-full w-full flex-col items-center justify-center md:w-1/2 md:px-12">
             {/* <Image
               src="/hero.png"
               alt="Esteko Ingeniería"
@@ -41,19 +41,19 @@ export default function Home() {
               height={450}
               className="w-2/3 h-2/3 mx-auto py-24 md:w-3/4 md:h-3/4"
             /> */}
-            <p className="text-white text-start text-5xl font-semibold xxl:leading-tight w-full xxl:w-3/4 mt-24">
+            <p className="xxl:leading-tight xxl:w-3/4 mt-24 w-full text-start text-5xl font-semibold text-white">
               Soluciones <span className="text-primary">innovadoras</span>,{" "}
               <span className="text-primary">precisas</span> y{" "}
               <span className="text-primary">modernas</span> para potenciar tus
               proyectos de ingeniería.
             </p>
-            <div className="flex flex-col gap-4 items-start justify-start py-12 w-full xxl:w-3/4 space-y-4">
-              <Button className="text-lg font-bold px-12 w-1/2" asChild>
+            <div className="xxl:w-3/4 flex w-full flex-col items-start justify-start gap-4 space-y-4 py-12">
+              <Button className="w-1/2 px-12 text-lg font-bold" asChild>
                 <Link href="/contacto">Trabajemos Juntos</Link>
               </Button>
               <Button
                 variant="ghost"
-                className="text-lg font-bold px-12 text-white border border-primary w-1/2"
+                className="border-primary w-1/2 border px-12 text-lg font-bold text-white"
                 asChild
               >
                 <Link href="/#services">Investiga</Link>
