@@ -10,14 +10,13 @@ export default function ServicesSection() {
   const isDesktop = useIsDesktop();
   return (
     <div
-      className="mx-auto flex w-full max-w-7xl flex-col flex-wrap items-center justify-center pt-12"
+      className="mx-auto flex w-full max-w-7xl flex-col flex-wrap items-center justify-center xl:pt-12"
       id="services"
     >
       <h2 className="font-cooper text-3xl font-extrabold md:text-5xl">
         Nuestros Servicios
       </h2>
-      <div className="relative mt-24 flex w-full flex-col items-center justify-center gap-12">
-        {/* <div className="absolute bg-[#1C1C1C] w-[6px] h-full" /> */}
+      <div className="relative mt-12 flex w-full flex-col items-center justify-center gap-12 xl:mt-24">
         {SERVICES.map((service, i) => (
           <React.Fragment key={i}>
             {isDesktop ? (
@@ -27,7 +26,6 @@ export default function ServicesSection() {
             )}
           </React.Fragment>
         ))}
-        {/* <div className="absolute -bottom-12 bg-[#1C1C1C] w-[6px] h-full" /> */}
       </div>
     </div>
   );
@@ -108,13 +106,6 @@ function ItemCardFlare({
             clipPath,
           }}
         >
-          {/* <span
-            className={`text-white text-7xl font-bold absolute top-5 ${
-              isOdd ? "left-9" : "right-9"
-            }`}
-          >
-            {i + 1}
-          </span> */}
           <Image
             src={service.logo}
             alt={service.title}
@@ -132,12 +123,11 @@ function ItemCardFlare({
 
 function ServiceItemCardMobile({ service }: { service: Service }) {
   return (
-    <div className="mb-12 flex flex-col items-center justify-center px-4 last:mb-24">
-      <h3 className="font-cooper mb-4 text-2xl font-bold">{service.title}</h3>
-      <Link
-        className="relative h-[350px] w-full transition-all duration-200 hover:brightness-80"
-        href={`/servicios/${service.id}`}
-      >
+    <div className="mb-12 flex flex-col items-center justify-center last:mb-24">
+      <h3 className="font-cooper bg-primary w-full py-4 text-center text-2xl font-bold text-white">
+        {service.title}
+      </h3>
+      <div className="relative w-full">
         <Image
           src={service.image}
           alt={service.title}
@@ -145,29 +135,19 @@ function ServiceItemCardMobile({ service }: { service: Service }) {
           height={320}
           className="h-full w-full object-cover brightness-50"
         />
-        <div className="bg-primary flex h-[60px] w-full items-center justify-center text-2xl font-bold text-white">
+        <p className="p-4 font-semibold">{service.description}</p>
+        <ul className="list-inside list-disc pb-4 pl-8 font-semibold">
+          {service.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <Link
+          className="bg-primary flex h-[60px] w-full items-center justify-center text-2xl font-bold text-white"
+          href={`/servicios/${service.id}`}
+        >
           Conocer más
-        </div>
-        <ServiceItemCardMobileFlare service={service} />
-      </Link>
-    </div>
-  );
-}
-
-function ServiceItemCardMobileFlare({ service }: { service: Service }) {
-  return (
-    <div className="absolute inset-0 h-full">
-      <div
-        className="absolute right-0 bottom-0 z-10 flex h-1/3 w-[170px] items-center justify-center bg-[#1C1C1C]"
-        style={{ clipPath: "polygon(100% 0, 20% 100%, 100% 100%)" }}
-      />
-      <Image
-        src={service.logo}
-        alt={service.title}
-        width={60}
-        height={60}
-        className="absolute right-1 bottom-2 z-20"
-      />
+        </Link>
+      </div>
     </div>
   );
 }

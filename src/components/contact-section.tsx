@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ContactSection() {
   return (
-    <div className="relative mt-24 flex h-[60vh] w-full flex-col items-center justify-center">
+    <div className="relative flex h-[100vh] w-full flex-col items-center justify-center sm:mt-24 xl:h-[60vh]">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/hero-full-alt.jpg"
@@ -14,7 +14,7 @@ export default function ContactSection() {
           className="h-full w-full object-cover brightness-50"
         />
       </div>
-      <div className="flex w-[640px] flex-col">
+      <div className="flex flex-col px-4 xl:w-[640px] xl:px-0">
         <h4 className="font-cooper pb-4 text-2xl font-bold text-white">
           Contáctate con nosotros
         </h4>
