@@ -57,35 +57,17 @@ export default async function ServicioPage({
           autoPlay
           muted
           loop
-          className="h-[550px] w-full object-cover brightness-50"
+          className="h-[400px] w-full object-cover brightness-50 xl:h-[550px]"
         />
         <div className="absolute inset-0 bg-black/50" />
 
-        {/* <div
-          className="bg-white w-[170px] h-full absolute right-0 top-0 flex items-center justify-center"
-          style={{
-            clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0% 50%)",
-          }}
-        />
-        <div
-          className="bg-black w-[168px] h-full absolute right-0 top-0 flex items-center justify-center"
-          style={{
-            clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0% 50%)",
-          }}
-        >
-          <Image
-            src={service.logo}
-            alt={service.title}
-            width={100}
-            height={100}
-          />
-        </div> */}
-
         <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
-          <nav className="mb-4 flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-bold text-white">{service.title}</h1>
-            <Breadcrumb className="mt-4">
-              <BreadcrumbList>
+          <nav className="mb-4 flex flex-col items-center justify-center text-center xl:text-start">
+            <h1 className="text-4xl font-bold text-white xl:text-5xl">
+              {service.title}
+            </h1>
+            <Breadcrumb className="mt-4 hidden xl:block">
+              <BreadcrumbList className="flex flex-col items-center justify-center xl:flex-row">
                 <BreadcrumbItem>
                   <BreadcrumbLink
                     className="text-lg text-white hover:text-white/80"
@@ -113,7 +95,7 @@ export default async function ServicioPage({
       </div>
 
       {/* Service content section */}
-      <div className="w-full py-24">
+      <div className="w-full py-12 pb-24 xl:py-24">
         <ServiceContent service={service} />
       </div>
     </main>

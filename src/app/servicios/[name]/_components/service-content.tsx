@@ -32,11 +32,11 @@ export default function ServiceContent({ service }: { service: Service }) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-2xl font-bold">{service.legend}</h2>
-      <div className="w-3/4 pt-12">
+      <h2 className="text-center text-2xl font-bold">{service.legend}</h2>
+      <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
         <Carousel
           setApi={setApi}
-          className="float-left mr-12 w-1/2"
+          className="w-full xl:float-left xl:mr-12 xl:w-1/2"
           style={{
             shapeOutside: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
           }}
@@ -55,7 +55,7 @@ export default function ServiceContent({ service }: { service: Service }) {
             {Array.from({ length: count }).map((_, index) => (
               <button
                 key={index}
-                className={`h-[50px] w-full transition-colors ${
+                className={`h-[25px] w-full transition-colors xl:h-[50px] ${
                   index === current - 1 ? "bg-primary" : "bg-gray-400"
                 } hover:bg-primary hover:cursor-pointer`}
                 style={{
@@ -72,13 +72,15 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
           <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
         </Carousel>
-        <p className="text-lg">{service.description}</p>
-        <ul className="list-inside list-disc py-4">
+        <p className="pt-4 text-start font-semibold xl:text-lg">
+          {service.description}
+        </p>
+        <ul className="list-inside list-disc py-4 pl-4 font-semibold">
           {service.items.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p className="text-lg">
+        <p className="text-lg font-semibold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex
           dolorem. Illum iusto necessitatibus voluptatem nobis, reiciendis quasi
           tenetur libero dolorem quia quas nostrum, delectus velit et ipsum
