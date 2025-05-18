@@ -123,7 +123,7 @@ function ItemCardFlare({
 
 function ServiceItemCardMobile({ service }: { service: Service }) {
   return (
-    <div className="mb-12 flex flex-col items-center justify-center last:mb-24">
+    <div className="border-foreground mb-12 flex flex-col items-center justify-center border-y-2 last:mb-24 xl:border-y-0">
       <h3 className="font-cooper bg-primary w-full py-4 text-center text-2xl font-bold text-white">
         {service.title}
       </h3>

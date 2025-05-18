@@ -68,7 +68,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} relative flex min-h-screen flex-col pb-[590px] sm:pb-[300px]`}
+        className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} relative flex min-h-screen flex-col pb-[570px] sm:pb-[300px]`}
       >
         <NavBar />
         {children}
