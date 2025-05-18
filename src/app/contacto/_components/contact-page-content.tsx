@@ -100,7 +100,7 @@ export default function ContactPageContent() {
             <div
               className="bg-foreground w-1/4 py-12 text-white"
               style={{
-                clipPath: "polygon(0 0, 80% 0%, 70% 100%, 0% 100%)",
+                clipPath: "polygon(0 0, 95% 0%, 85% 100%, 0% 100%)",
               }}
             >
               <h3 className="pl-4 text-2xl font-bold">
