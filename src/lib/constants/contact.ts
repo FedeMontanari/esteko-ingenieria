@@ -1,5 +1,5 @@
 const CONTACT_EMAIL = "contacto@estekoingenieria.com";
-const CONTACT_PHONE = "+54 3854886714 / +54 3855892806";
+const CONTACT_PHONE = "+54 3854886714\n+54 3855892806";
 const CONTACT_ADDRESS = "Neuquén Capital, Argentina";
 const CONTACT_LINKEDIN = "https://www.linkedin.com/company/esteko-ingenieria/";
 const CONTACT_INSTAGRAM = "https://www.instagram.com/esteko.ingenieria";

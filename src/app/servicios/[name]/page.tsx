@@ -95,7 +95,7 @@ export default async function ServicioPage({
       </div>
 
       {/* Service content section */}
-      <div className="w-full py-12 pb-24 xl:py-24">
+      <div className="w-full py-12 xl:py-24">
         <ServiceContent service={service} />
       </div>
     </main>

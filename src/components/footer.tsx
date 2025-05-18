@@ -32,7 +32,7 @@ export default function Footer({ className }: { className?: string }) {
               />
               <div className="space-y-2">
                 <p>{CONTACT_DATA.email}</p>
-                <p>{CONTACT_DATA.phone}</p>
+                <p className="whitespace-pre-line">{CONTACT_DATA.phone}</p>
                 <p>{CONTACT_DATA.address}</p>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function Footer({ className }: { className?: string }) {
               />
               <div className="font-cooper space-y-2 text-sm">
                 <p>{CONTACT_DATA.email}</p>
-                <p>{CONTACT_DATA.phone}</p>
+                <p className="whitespace-pre-line">{CONTACT_DATA.phone}</p>
                 <p>{CONTACT_DATA.address}</p>
               </div>
             </div>

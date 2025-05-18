@@ -59,7 +59,7 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre</FormLabel>
+              <FormLabel className="sr-only">Nombre</FormLabel>
               <FormControl>
                 <Input
                   className="bg-[#eaeaea]"
@@ -68,7 +68,7 @@ export default function ContactForm() {
                   {...field}
                 />
               </FormControl>
-              <FormDescription className="text-muted-foreground text-xs">
+              <FormDescription className="text-muted-foreground hidden text-xs xl:block">
                 Nombre que quieres que aparezca en el mensaje.
               </FormDescription>
               <FormMessage />
@@ -80,7 +80,7 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
                 <Input
                   className="bg-[#eaeaea]"
@@ -89,7 +89,7 @@ export default function ContactForm() {
                   {...field}
                 />
               </FormControl>
-              <FormDescription className="text-muted-foreground text-xs">
+              <FormDescription className="text-muted-foreground hidden text-xs xl:block">
                 Email que quieres que aparezca en el mensaje.
               </FormDescription>
               <FormMessage />
@@ -101,7 +101,7 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Mensaje</FormLabel>
+              <FormLabel className="sr-only">Mensaje</FormLabel>
               <FormControl>
                 <Textarea
                   className="bg-[#eaeaea]"
@@ -114,7 +114,7 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="w-1/2 self-center text-lg font-bold" type="submit">
+        <Button className="w-full text-lg font-bold xl:w-1/2" type="submit">
           {isPending ? "Enviando..." : "Enviar Mensaje"}
         </Button>
       </form>
