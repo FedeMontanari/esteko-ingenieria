@@ -117,19 +117,19 @@ export default function Footer({ className }: { className?: string }) {
           </div>
         </div>
       ) : (
-        <div className="relative flex flex-col items-start justify-center gap-4 px-12 py-8">
+        <div className="relative flex flex-col items-start justify-center gap-4 px-4 py-8">
           <div className="mb-4 flex flex-col items-start justify-evenly gap-4">
             <div>
-              <Link className="font-cooper text-3xl font-semibold" href="/">
+              <Link className="font-cooper text-2xl font-semibold" href="/">
                 Inicio
               </Link>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-cooper text-3xl font-semibold">Servicios</p>
+              <p className="font-cooper text-2xl font-semibold">Servicios</p>
               {SERVICES.map((service) => (
                 <Link
                   key={service.id}
-                  className="font-cooper"
+                  className="font-cooper text-sm"
                   href={service.href}
                   scroll={false}
                 >
@@ -138,13 +138,12 @@ export default function Footer({ className }: { className?: string }) {
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-cooper text-3xl font-semibold">Nosotros</p>
-              <Link className="font-cooper" href="/contacto">
+              <p className="font-cooper text-2xl font-semibold">Nosotros</p>
+              <Link className="font-cooper text-sm" href="/contacto">
                 Contactanos
               </Link>
             </div>
           </div>
-          <Separator className="w-full" />
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-row items-center justify-center space-x-6">
               <Image
@@ -153,7 +152,7 @@ export default function Footer({ className }: { className?: string }) {
                 width={60}
                 height={60}
               />
-              <div className="font-cooper space-y-2">
+              <div className="font-cooper space-y-2 text-sm">
                 <p>{CONTACT_DATA.email}</p>
                 <p>{CONTACT_DATA.phone}</p>
                 <p>{CONTACT_DATA.address}</p>
@@ -207,10 +206,6 @@ export default function Footer({ className }: { className?: string }) {
                 .
               </p>
             </div>
-            <p className="text-center text-sm">
-              &copy; {new Date().getFullYear()} Esteko Ingeniería. Todos los
-              derechos reservados.
-            </p>
           </div>
         </div>
       )}
