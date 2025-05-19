@@ -8,11 +8,16 @@ export default function AboutUsSection() {
   return (
     <div className="py-12">
       {isDesktop ? (
-        <div className="bg-primary my-24 flex h-[500px] w-1/2 items-center justify-start px-12">
-          <h3 className="font-akira text-4xl font-semibold text-white">
-            PORQUE ESTEKO
+        <div className="bg-primary my-24 flex h-[500px] w-1/2 flex-col items-start justify-center px-12">
+          <p className="font-cooper pb-4 font-semibold text-white">
+            Sobre Nosotros
+          </p>
+          <h3 className="font-cooper text-5xl text-white">
+            ¿POR QUE ELEGIR
+            <br />
+            <span className="font-akira px-1 text-7xl">ESTEKO</span>?
           </h3>
-          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-white p-24">
+          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-[#303030] p-12 text-lg font-semibold text-white">
             <p className="whitespace-pre-line">{ABOUT_US}</p>
           </div>
         </div>

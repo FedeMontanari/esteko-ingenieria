@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { ChevronsRight } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -19,14 +20,16 @@ export default function ContactSection() {
           Contáctate con nosotros
         </h4>
         <p className="font-cooper text-4xl font-bold text-white">
-          ¿Listo para transformar ideas en proyectos de alto impacto?
+          ¿Listo para llevar tu proyecto a otro nivel con tecnologia aplicada?
         </p>
         <Button
           asChild
           variant="default"
           className="font-cooper mt-8 w-1/2 self-center text-lg font-semibold"
         >
-          <Link href="/contacto">Contáctanos</Link>
+          <Link href="/contacto">
+            Contáctanos <ChevronsRight className="inline" />
+          </Link>
         </Button>
       </div>
     </div>

@@ -12,6 +12,7 @@ import {
 import { Slash } from "lucide-react";
 import { CONTACT_DATA } from "@/lib/constants/contact";
 import ContactForm from "./contact-form";
+import Image from "next/image";
 
 export default function ContactPageContent() {
   const isMobile = useIsMobile();
@@ -52,10 +53,18 @@ export default function ContactPageContent() {
           </div>
         </main>
       ) : (
-        <main className="min-h-screen w-full">
+        <main className="relative min-h-screen w-full">
           {/* Hero section */}
+
+          <Image
+            src="/contact-hero.jpg"
+            alt="Hombres dando la mano"
+            width={1000}
+            height={1000}
+            className="absolute -z-10 h-[400px] w-full object-cover brightness-50 xl:h-[550px]"
+          />
           <div className="w-full">
-            <div className="bg-foreground flex h-[550px] flex-col justify-center">
+            <div className="flex h-[550px] flex-col justify-center bg-transparent">
               <nav className="mb-4 flex flex-col items-center justify-center">
                 <h1 className="text-5xl font-bold text-white">Contáctanos</h1>
                 <Breadcrumb className="mt-4">
@@ -69,13 +78,13 @@ export default function ContactPageContent() {
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator>
-                      <Slash />
+                      <Slash className="text-primary" />
                     </BreadcrumbSeparator>
                     <BreadcrumbItem className="text-lg text-white">
                       Nosotros
                     </BreadcrumbItem>
                     <BreadcrumbSeparator>
-                      <Slash />
+                      <Slash className="text-primary" />
                     </BreadcrumbSeparator>
                     <BreadcrumbItem className="text-primary text-lg font-bold">
                       Contacto

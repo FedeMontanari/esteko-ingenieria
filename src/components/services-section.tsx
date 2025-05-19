@@ -46,7 +46,7 @@ function ServiceItemCard({ service, i }: { service: Service; i: number }) {
             {service.title}
           </h3>
           <p className="mb-4 text-sm italic">{service.description}</p>
-          <ul className="list-inside list-disc">
+          <ul className="list-inside list-disc font-semibold">
             {service.items.map((item) => (
               <li key={item}>{item}</li>
             ))}

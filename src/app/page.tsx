@@ -22,11 +22,11 @@ export default function Home() {
             </video>
           </div>
           <div className="flex h-full w-full flex-col items-center justify-center xl:w-1/2 xl:px-12">
-            <p className="xxl:text-5xl mt-24 w-full text-center text-3xl font-semibold text-white xl:w-3/4 xl:text-start xl:text-4xl xl:leading-tight">
+            <p className="mt-24 w-full text-center text-3xl font-semibold text-white xl:w-3/4 xl:text-start xl:text-5xl xl:leading-tight">
               Soluciones <span className="text-primary">innovadoras</span>,{" "}
               <span className="text-primary">precisas</span> y{" "}
-              <span className="text-primary">modernas</span> para potenciar tus
-              proyectos de ingeniería.
+              <span className="text-primary">eficientes</span> para potenciar
+              tus proyectos.
             </p>
             <div className="flex w-full flex-col items-center justify-start gap-4 space-y-4 py-12 xl:w-3/4 xl:items-start">
               <Button

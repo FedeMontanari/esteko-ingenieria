@@ -77,13 +77,13 @@ export default async function ServicioPage({
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <Slash />
+                  <Slash className="text-primary" />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem className="text-lg text-white">
                   Servicios
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <Slash />
+                  <Slash className="text-primary" />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem className="text-primary text-lg font-bold">
                   {service.title}

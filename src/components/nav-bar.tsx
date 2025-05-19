@@ -21,7 +21,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= 600) {
+      if (window.scrollY >= 800) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <div
       className={`fixed top-0 z-50 flex w-[100vw] items-center justify-between backdrop-blur-md transition-all duration-1000 ${
-        isScrolled ? "bg-primary/80" : "bg-[#7C7C7C]/95"
+        isScrolled ? "bg-primary/80" : "bg-[#303030]/95"
       } ${isDesktop ? "h-22" : "h-16"}`}
     >
       <div>
@@ -84,7 +84,7 @@ export default function NavBar() {
             </PopoverTrigger>
             <PopoverContent
               className={`mt-5 flex h-[215px] w-screen items-start justify-evenly border-none backdrop-blur-md transition-colors duration-1000 ${
-                isScrolled ? "bg-primary/80" : "bg-[#7C7C7C]/95"
+                isScrolled ? "bg-primary/80" : "bg-[#303030]/95"
               }`}
             >
               <div className="flex flex-col gap-2 text-white">
