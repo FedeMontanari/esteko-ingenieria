@@ -54,7 +54,8 @@ const formSchema = z.object({
       (val) =>
         val
           .trim()
-          .replace(/\r\n/g, "\n") // Normalize line endings
+          .replace(/\r\n?|\n/g, "\n") // Normalize all line endings to \n
+          .replace(/\r/g, "") // Remove any remaining \r
           .replace(/[<>]/g, "") // Remove potential HTML tags
           .replace(/javascript:/gi, "") // Remove javascript: protocol
           .replace(/data:/gi, "") // Remove data: protocol
@@ -78,7 +79,11 @@ export default function ContactForm() {
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("email", data.email);
-    formData.append("message", data.message);
+    // Convert line breaks to HTML line breaks
+    const sanitizedMessage = data.message
+      .replace(/\r\n?|\n/g, "<br>") // Convert all line breaks to <br>
+      .replace(/\r/g, ""); // Remove any remaining \r
+    formData.append("message", sanitizedMessage);
 
     startTransition(async () => {
       const emailResponse = await sendEmail(formData);
