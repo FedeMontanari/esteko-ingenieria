@@ -29,17 +29,43 @@ export async function sendEmail(formData: FormData) {
     },
     secure: true,
     tls: {
-      ciphers: "SSLv3",
+      rejectUnauthorized: false,
     },
     requireTLS: true,
     debug: true,
   });
 
+  // Verify SMTP connection configuration
+  try {
+    await transporter.verify();
+    console.log("SMTP connection verified successfully");
+  } catch (error) {
+    console.error("SMTP connection verification failed:", error);
+    return { success: false, error: "SMTP connection verification failed" };
+  }
+
   const mailOptions = {
-    from: `${name} <${email}>`,
+    from: `"Esteko Ingeniería Contact Form" <${EMAIL_USER}>`,
+    replyTo: `${name} <${email}>`,
     to: emailTo,
-    subject: `Contacto Web`,
+    subject: `Contacto Web - ${name}`,
     text: message,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333;">Nuevo mensaje de contacto</h2>
+        <p><strong>De:</strong> ${name} (${email})</p>
+        <p><strong>Mensaje:</strong></p>
+        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+          ${message.replace(/\n/g, "<br>")}
+        </div>
+      </div>
+    `,
+    headers: {
+      "X-Priority": "1",
+      "X-MSMail-Priority": "High",
+      Importance: "high",
+      "X-Mailer": "Esteko Ingeniería Contact Form",
+    },
   };
 
   try {
@@ -49,6 +75,8 @@ export async function sendEmail(formData: FormData) {
     return { success: true };
   } catch (err) {
     console.error("Email sending failed:", err);
-    return { success: false, error: "Email sending failed" };
+    const errorMessage =
+      err instanceof Error ? err.message : "Unknown error occurred";
+    return { success: false, error: `Email sending failed: ${errorMessage}` };
   }
 }

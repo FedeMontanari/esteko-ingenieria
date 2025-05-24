@@ -71,7 +71,6 @@ export default function Footer({ className }: { className?: string }) {
                     key={service.id}
                     className="text-sm"
                     href={service.href}
-                    scroll={false}
                   >
                     {service.title}
                   </Link>
@@ -142,7 +141,6 @@ export default function Footer({ className }: { className?: string }) {
                     key={service.id}
                     className="font-cooper text-sm"
                     href={service.href}
-                    scroll={false}
                   >
                     {service.title}
                   </Link>
@@ -275,7 +273,6 @@ export default function Footer({ className }: { className?: string }) {
                     key={service.id}
                     className="text-sm"
                     href={service.href}
-                    scroll={false}
                   >
                     {service.title}
                   </Link>
