@@ -6,6 +6,7 @@ import NavBar from "@/components/nav-bar";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import { cooper } from "@/assets/fonts/cooper";
+import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -73,6 +74,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

@@ -17,12 +17,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { z } from "zod";
+import { toast } from "sonner";
 
-// TODO: Add invalid schema custom error message
 const formSchema = z.object({
-  name: z.string().min(1),
-  email: z.string().email(),
-  message: z.string().min(1),
+  name: z
+    .string()
+    .min(1, "El nombre es requerido.")
+    .max(50, "El nombre no puede tener más de 50 caracteres."),
+  email: z.string().email("El email no es válido."),
+  message: z
+    .string()
+    .min(1, "El mensaje es requerido.")
+    .max(500, "El mensaje no puede tener más de 500 caracteres."),
 });
 
 export default function ContactForm() {
@@ -46,8 +52,9 @@ export default function ContactForm() {
       const emailResponse = await sendEmail(formData);
       if (emailResponse.success) {
         form.reset();
+        toast.success("Mensaje enviado correctamente");
       } else {
-        console.error("Error sending email:", emailResponse.error);
+        toast.error("Error al enviar el mensaje");
       }
     });
   }
@@ -60,6 +67,7 @@ export default function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="sr-only">Nombre</FormLabel>
+              <FormMessage />
               <FormControl>
                 <Input
                   className="bg-[#eaeaea]"
@@ -71,7 +79,6 @@ export default function ContactForm() {
               <FormDescription className="text-muted-foreground hidden text-xs xl:block">
                 Nombre que quieres que aparezca en el mensaje.
               </FormDescription>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -81,6 +88,7 @@ export default function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="sr-only">Email</FormLabel>
+              <FormMessage />
               <FormControl>
                 <Input
                   className="bg-[#eaeaea]"
@@ -92,7 +100,6 @@ export default function ContactForm() {
               <FormDescription className="text-muted-foreground hidden text-xs xl:block">
                 Email que quieres que aparezca en el mensaje.
               </FormDescription>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -102,6 +109,7 @@ export default function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="sr-only">Mensaje</FormLabel>
+              <FormMessage />
               <FormControl>
                 <Textarea
                   className="bg-[#eaeaea]"
@@ -110,7 +118,6 @@ export default function ContactForm() {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
