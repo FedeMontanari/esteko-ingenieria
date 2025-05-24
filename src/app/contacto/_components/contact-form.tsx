@@ -23,12 +23,44 @@ const formSchema = z.object({
   name: z
     .string()
     .min(1, "El nombre es requerido.")
-    .max(50, "El nombre no puede tener más de 50 caracteres."),
-  email: z.string().email("El email no es válido."),
+    .max(50, "El nombre no puede tener más de 50 caracteres.")
+    .transform(
+      (val) =>
+        val
+          .trim()
+          .replace(/[<>]/g, "") // Remove potential HTML tags
+          .replace(/[&]/g, "") // Remove ampersands
+          .replace(/javascript:/gi, "") // Remove javascript: protocol
+          .replace(/data:/gi, "") // Remove data: protocol
+          .replace(/on\w+=/gi, ""), // Remove event handlers
+    ),
+  email: z
+    .string()
+    .email("El email no es válido.")
+    .transform(
+      (val) =>
+        val
+          .trim()
+          .toLowerCase()
+          .replace(/[<>]/g, "") // Remove potential HTML tags
+          .replace(/javascript:/gi, "") // Remove javascript: protocol
+          .replace(/data:/gi, ""), // Remove data: protocol
+    ),
   message: z
     .string()
     .min(1, "El mensaje es requerido.")
-    .max(500, "El mensaje no puede tener más de 500 caracteres."),
+    .max(500, "El mensaje no puede tener más de 500 caracteres.")
+    .transform(
+      (val) =>
+        val
+          .trim()
+          .replace(/\r\n/g, "\n") // Normalize line endings
+          .replace(/[<>]/g, "") // Remove potential HTML tags
+          .replace(/javascript:/gi, "") // Remove javascript: protocol
+          .replace(/data:/gi, "") // Remove data: protocol
+          .replace(/on\w+=/gi, "") // Remove event handlers
+          .replace(/\b(select|insert|update|delete|drop|union|exec)\b/gi, ""), // Remove SQL injection patterns
+    ),
 });
 
 export default function ContactForm() {
