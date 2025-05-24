@@ -12,7 +12,6 @@ const {
   EMAIL_PASS,
 } = process.env;
 
-// TODO: Troubleshoot email sometimes not sending
 export async function sendEmail(formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
@@ -45,7 +44,7 @@ export async function sendEmail(formData: FormData) {
   }
 
   const mailOptions = {
-    from: `"Esteko Ingeniería Contact Form" <${EMAIL_USER}>`,
+    from: `"Formulario Web" <${EMAIL_USER}>`,
     replyTo: `${name} <${email}>`,
     to: emailTo,
     subject: `Contacto Web - ${name}`,
@@ -64,7 +63,7 @@ export async function sendEmail(formData: FormData) {
       "X-Priority": "1",
       "X-MSMail-Priority": "High",
       Importance: "high",
-      "X-Mailer": "Esteko Ingeniería Contact Form",
+      "X-Mailer": "Formulario Web",
     },
   };
 
