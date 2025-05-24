@@ -84,7 +84,7 @@ export default function NavBar() {
             </PopoverTrigger>
             <PopoverContent
               className={`mt-5 flex h-[215px] w-screen items-start justify-evenly border-none backdrop-blur-md transition-colors duration-1000 ${
-                isScrolled ? "bg-primary/80" : "bg-[#303030]/95"
+                isScrolled ? "bg-primary/70" : "bg-[#303030]/95"
               }`}
             >
               <div className="flex flex-col gap-2 text-white">
@@ -123,7 +123,11 @@ export default function NavBar() {
               <Menu width={24} height={24} className="mr-4 h-8 w-8" />
             )}
           </PopoverTrigger>
-          <PopoverContent className="mt-3 flex h-screen w-screen flex-col items-center justify-start border-none bg-[#7C7C7C]">
+          <PopoverContent
+            className={`mt-3 flex h-screen w-screen flex-col items-center justify-start border-none text-white backdrop-blur-md ${
+              isScrolled ? "bg-primary/80" : "bg-[#303030]/95"
+            }`}
+          >
             <div className="flex flex-col gap-2 space-y-3">
               <Link
                 href="/"

@@ -2,6 +2,7 @@
 
 import { useIsDesktop } from "@/hooks/use-media-query";
 import { Service, SERVICES } from "@/lib/constants/services";
+import { ChevronsRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -145,7 +146,7 @@ function ServiceItemCardMobile({ service }: { service: Service }) {
           className="bg-primary flex h-[60px] w-full items-center justify-center text-2xl font-bold text-white"
           href={`/servicios/${service.id}`}
         >
-          Conocer más
+          Conocer más <ChevronsRight className="ml-2 inline-block" />
         </Link>
       </div>
     </div>
