@@ -3,6 +3,7 @@ import Link from "next/link";
 import AboutUsSection from "@/components/about-us-section";
 import ServicesSection from "@/components/services-section";
 import ContactSection from "@/components/contact-section";
+import { ChevronsRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -33,7 +34,10 @@ export default function Home() {
                 className="min-w-1/2 px-12 text-lg font-bold xl:w-1/2"
                 asChild
               >
-                <Link href="/contacto">Trabajemos Juntos</Link>
+                <Link href="/contacto">
+                  Trabajemos Juntos
+                  <ChevronsRight className="inline-block" />
+                </Link>
               </Button>
               <Button
                 variant="ghost"
