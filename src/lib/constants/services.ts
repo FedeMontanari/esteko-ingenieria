@@ -185,8 +185,8 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     image: structuralCalculation,
   },
   {
-    id: "gestion-de-proyectos",
-    title: "Gestión de proyectos",
+    id: "direccion-y-asesoramiento",
+    title: "Dirección de obra y asesoramiento técnico",
     description:
       "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para asegurar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
     image: constructionManagement,
