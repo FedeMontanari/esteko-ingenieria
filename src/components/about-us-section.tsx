@@ -17,7 +17,7 @@ export default function AboutUsSection() {
             <br />
             <span className="font-akira px-1 text-7xl">ESTEKO</span>?
           </h3>
-          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-[#303030] p-12 text-lg font-semibold text-white">
+          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-[#303030] p-12 px-24 text-lg text-white">
             <p className="whitespace-pre-line">{ABOUT_US}</p>
           </div>
         </div>
