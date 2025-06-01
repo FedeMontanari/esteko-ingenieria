@@ -75,33 +75,24 @@ export default function ServiceContent({ service }: { service: Service }) {
         <p className="pt-4 text-start font-semibold xl:text-lg">
           {service.description}
         </p>
+      </div>
+      <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
+        <h3 className="text-center text-2xl font-bold">
+          Nuestros servicios incluyen:
+        </h3>
         <ul className="list-inside list-disc py-4 pl-4 font-semibold">
           {service.items.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p className="text-lg font-semibold">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex
-          dolorem. Illum iusto necessitatibus voluptatem nobis, reiciendis quasi
-          tenetur libero dolorem quia quas nostrum, delectus velit et ipsum
-          excepturi debitis. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Ipsa aliquam sint nam nisi ducimus officiis eligendi autem,
-          facere saepe. Vitae itaque ratione illo possimus quibusdam ipsum quo
-          iste accusamus doloribus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quidem cupiditate, pariatur dolorum fuga
-          perspiciatis sequi at iure quisquam praesentium asperiores, ad totam
-          quam libero et a magni! Unde, laudantium eum! Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Ad temporibus, mollitia, aut sequi
-          animi explicabo dolor provident nulla aperiam rerum tenetur incidunt
-          dignissimos. Ea ab voluptate quae obcaecati sed corporis. Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Optio dolor sit minima
-          fugiat blanditiis soluta fugit, iusto officia delectus sed rerum harum
-          eos voluptatem? Ipsam corporis quisquam soluta ipsa quam. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Optio nihil, sunt vel
-          odio enim officia neque labore deleniti assumenda iste dolorum fugiat?
-          Veritatis molestiae amet dicta architecto aperiam exercitationem
-          dolore.
-        </p>
+        <h3 className="text-center text-2xl font-bold">
+          Beneficios de {service.prosTitle}:
+        </h3>
+        <ul className="list-inside list-disc py-4 pl-4 font-semibold">
+          {service.pros.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
