@@ -75,7 +75,7 @@ function ServiceItemCard({
             isOdd ? "right-0" : "left-0"
           }`}
         >
-          Conocer más
+          Conocer más <ChevronsRight className="mt-1 inline-block" />
         </span>
       </Link>
     </div>
