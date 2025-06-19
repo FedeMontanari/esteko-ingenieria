@@ -5,7 +5,7 @@ export const ABOUT_US: ReactNode = (
     En <span className="font-bold">Esteko</span> combinamos nuestra pasión por
     la ingeniería con{" "}
     <span className="font-bold">tecnología de vanguardia</span> y{" "}
-    <span className="font-bold">experiencia profesional</span>, para brindar
+    <span className="font-bold">experiencia profesional</span>, para brindar{" "}
     <span className="font-bold">
       soluciones precisas, coordinadas y adaptadas
     </span>{" "}

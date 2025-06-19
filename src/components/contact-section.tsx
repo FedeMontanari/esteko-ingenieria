@@ -20,7 +20,7 @@ export default function ContactSection() {
           Contáctate con nosotros
         </h4>
         <p className="font-cooper text-4xl font-bold text-white">
-          ¿Listo para llevar tu proyecto a otro nivel con tecnologia aplicada?
+          ¿Listo para llevar tu proyecto a otro nivel con tecnología aplicada?
         </p>
         <Button
           asChild

@@ -50,10 +50,10 @@ Trabajamos junto a estudios de arquitectura, desarrolladoras, constructoras y or
     image: bim,
     href: "/servicios/consultoria-bim",
     logo: bimLogo,
-    legend: "Optimiza tus proyectos con nuestra Consultoría BIM",
+    legend: "Optimiza tus proyectos con nuestra consultoría B.I.M",
     carouselImages: bimCarouselImages,
     heroVideo: "/bim-hero.webm",
-    prosTitle: "nuetra consultoría BIM",
+    prosTitle: "nuestra consultoría B.I.M",
     pros: [
       "Mayor eficiencia técnica y reducción de tiempos en diseño y ejecución.",
       "Prevención de errores y conflictos en obra mediante coordinación anticipada.",
@@ -103,7 +103,7 @@ Diseñamos y verificamos estructuras para todo tipo de sistemas constructivos, i
   },
   {
     id: "direccion-y-asesoramiento",
-    title: "Direccion y asesoramiento Técnico",
+    title: "Dirección y asesoramiento técnico",
     description: `Ofrecemos dirección técnica y asesoramiento especializado durante la ejecución de la obra, garantizando el cumplimiento de las especificaciones del proyecto, la normativa vigente y los estándares de calidad. Nuestra intervención permite anticipar conflictos, reducir errores constructivos y mantener un control efectivo sobre los procesos de ejecución.
 Nos involucramos activamente en cada etapa, brindando soporte técnico en tiempo real, supervisando el avance y coordinando la interacción entre los distintos rubros involucrados.
 `,
@@ -155,7 +155,7 @@ Nuestro servicio combina experiencia en ingeniería civil con técnicas avanzada
     image: dronePhotography,
     href: "/servicios/fotografia-con-drones",
     logo: dronePhotographyLogo,
-    legend: "Percisión y eficiencia en el levantamiento de datos",
+    legend: "Precisión y eficiencia en el levantamiento de datos",
     carouselImages: droneCarouselImages,
     heroVideo: "/drone-photography-hero.webm",
     prosTitle: "nuestra fotogrametría aérea",

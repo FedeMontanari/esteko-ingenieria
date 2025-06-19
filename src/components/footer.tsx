@@ -79,7 +79,7 @@ export default function Footer({ className }: { className?: string }) {
               <div className="flex flex-col gap-2">
                 <p className="text-3xl">Nosotros</p>
                 <Link className="text-sm" href="/contacto">
-                  Contactanos
+                  Contáctanos
                 </Link>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Footer({ className }: { className?: string }) {
               <div className="flex flex-col gap-2">
                 <p className="font-cooper text-2xl font-semibold">Nosotros</p>
                 <Link className="font-cooper text-sm" href="/contacto">
-                  Contactanos
+                  Contáctanos
                 </Link>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function Footer({ className }: { className?: string }) {
               <div className="flex flex-col gap-2">
                 <p className="text-2xl">Nosotros</p>
                 <Link className="text-sm" href="/contacto">
-                  Contactanos
+                  Contáctanos
                 </Link>
               </div>
             </div>
