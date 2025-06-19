@@ -44,7 +44,7 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselContent>
             {service.carouselImages.map((image, index) => (
               <CarouselItem
-                className="flex h-[400px] w-[600px] items-center justify-center"
+                className="flex h-[400px] w-[600px] items-center justify-center hover:cursor-grab active:cursor-grabbing"
                 key={index}
               >
                 <Image src={image} alt={service.title} />
@@ -69,8 +69,8 @@ export default function ServiceContent({ service }: { service: Service }) {
               />
             ))}
           </div>
-          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
-          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
+          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:cursor-pointer" />
+          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:cursor-pointer" />
         </Carousel>
         <p className="pt-4 text-start font-semibold xl:text-lg">
           {service.description}

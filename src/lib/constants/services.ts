@@ -7,6 +7,11 @@ import bimLogo from "@/assets/images/services/logos/bim-logo.svg";
 import structuralCalculationLogo from "@/assets/images/services/logos/structural-calculation-logo.svg";
 import constructionManagementLogo from "@/assets/images/services/logos/management-logo.svg";
 import dronePhotographyLogo from "@/assets/images/services/logos/drone-logo.svg";
+
+// Import carousel images
+import { bimCarouselImages } from "@/assets/images/services/carrousel/bim";
+import { droneCarouselImages } from "@/assets/images/services/carrousel/drone";
+
 import { StaticImageData } from "next/image";
 
 export interface Service extends ServiceLanding {
@@ -46,7 +51,7 @@ Trabajamos junto a estudios de arquitectura, desarrolladoras, constructoras y or
     href: "/servicios/consultoria-bim",
     logo: bimLogo,
     legend: "Optimiza tus proyectos con nuestra Consultoría BIM",
-    carouselImages: [bim, bim, bim, bim, bim],
+    carouselImages: bimCarouselImages,
     heroVideo: "/bim-hero.webm",
     prosTitle: "nuetra consultoría BIM",
     pros: [
@@ -151,13 +156,7 @@ Nuestro servicio combina experiencia en ingeniería civil con técnicas avanzada
     href: "/servicios/fotografia-con-drones",
     logo: dronePhotographyLogo,
     legend: "Percisión y eficiencia en el levantamiento de datos",
-    carouselImages: [
-      dronePhotography,
-      dronePhotography,
-      dronePhotography,
-      dronePhotography,
-      dronePhotography,
-    ],
+    carouselImages: droneCarouselImages,
     heroVideo: "/drone-photography-hero.webm",
     prosTitle: "nuestra fotogrametría aérea",
     pros: [
