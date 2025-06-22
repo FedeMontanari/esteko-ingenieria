@@ -1,18 +1,24 @@
-import bim from "@/assets/images/services/general/bim.png";
-import structuralCalculation from "@/assets/images/services/general/structural-calculation.png";
-import constructionManagement from "@/assets/images/services/general/construction-management.png";
-import dronePhotography from "@/assets/images/services/general/drone-photography.png";
-
 import bimLogo from "@/assets/images/services/logos/bim-logo.svg";
 import structuralCalculationLogo from "@/assets/images/services/logos/structural-calculation-logo.svg";
 import constructionManagementLogo from "@/assets/images/services/logos/management-logo.svg";
 import dronePhotographyLogo from "@/assets/images/services/logos/drone-logo.svg";
 
 // Import carousel images
-import { bimCarouselImages } from "@/assets/images/services/carrousel/bim";
-import { droneCarouselImages } from "@/assets/images/services/carrousel/drone";
+import {
+  bimCarouselImages,
+  bimMain,
+  bimPortada,
+} from "@/assets/images/services/general/bim";
+import {
+  droneCarouselImages,
+  droneMain,
+} from "@/assets/images/services/general/drone";
 
 import { StaticImageData } from "next/image";
+import {
+  constructionManagement,
+  structuralCalculation,
+} from "@/assets/images/services/general";
 
 export interface Service extends ServiceLanding {
   items: string[];
@@ -47,7 +53,7 @@ Trabajamos junto a estudios de arquitectura, desarrolladoras, constructoras y or
       "Generación de modelos As-Built precisos, integrando relevamientos con drones y escaneo 3D, ideales para documentación de obra, certificaciones o mantenimiento futuro.",
       "Estandarización de procesos BIM, definición de protocolos, plantillas, niveles de desarrollo (LOD) y estructuración de flujos de trabajo internos.",
     ],
-    image: bim,
+    image: bimPortada,
     href: "/servicios/consultoria-bim",
     logo: bimLogo,
     legend: "Optimiza tus proyectos con nuestra consultoría B.I.M",
@@ -152,7 +158,7 @@ Nuestro servicio combina experiencia en ingeniería civil con técnicas avanzada
       "Cálculo y verificación de movimientos de suelos para control de ejecución y planificación de tareas.",
       "Inspección técnica de líneas eléctricas, cubiertas, estructuras elevadas y zonas inaccesibles.",
     ],
-    image: dronePhotography,
+    image: droneMain,
     href: "/servicios/fotografia-con-drones",
     logo: dronePhotographyLogo,
     legend: "Precisión y eficiencia en el levantamiento de datos",
@@ -174,7 +180,7 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     title: "Consultoría B.I.M",
     description:
       "Modelado, gestión y coordinación de modelos bajo metodología BIM para optimizar el diseño, la planificación y la ejecución de proyectos, integrando procesos colaborativos y soluciones digitales para la construcción.",
-    image: bim,
+    image: bimMain,
   },
   {
     id: "calculo-estructural",
@@ -195,6 +201,6 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     title: "Fotogrametría con drones",
     description:
       "Relevamientos aéreos de alta precisión para digitalización de obras, control de avance, documentación As-Built y análisis técnico de terrenos y estructuras.",
-    image: dronePhotography,
+    image: droneMain,
   },
 ];

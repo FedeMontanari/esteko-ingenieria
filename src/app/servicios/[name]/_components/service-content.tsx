@@ -69,28 +69,32 @@ export default function ServiceContent({ service }: { service: Service }) {
               />
             ))}
           </div>
-          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:cursor-pointer" />
-          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:cursor-pointer" />
+          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
+          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
         </Carousel>
         <p className="pt-4 text-start font-semibold xl:text-lg">
           {service.description}
         </p>
       </div>
       <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
-        <h3 className="text-center text-2xl font-bold">
+        <h3 className="text-start text-2xl font-bold">
           Nuestros servicios incluyen:
         </h3>
-        <ul className="list-inside list-disc py-4 pl-4 font-semibold">
+        <ul className="list-inside py-4 pl-4 font-semibold">
           {service.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li className="before:content-['-']" key={item}>
+              {item}
+            </li>
           ))}
         </ul>
-        <h3 className="text-center text-2xl font-bold">
+        <h3 className="text-start text-2xl font-bold">
           Beneficios de {service.prosTitle}:
         </h3>
-        <ul className="list-inside list-disc py-4 pl-4 font-semibold">
+        <ul className="list-inside py-4 pl-4 font-semibold">
           {service.pros.map((item) => (
-            <li key={item}>{item}</li>
+            <li className="before:content-['-']" key={item}>
+              {item}
+            </li>
           ))}
         </ul>
       </div>

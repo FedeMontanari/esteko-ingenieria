@@ -8,7 +8,7 @@ export default function AboutUsSection() {
   return (
     <div className="py-12">
       {isDesktop ? (
-        <div className="bg-primary my-24 flex h-[500px] w-1/2 flex-col items-start justify-center px-12">
+        <div className="bg-primary my-24 flex h-[500px] w-full flex-col items-start justify-center pl-32">
           <p className="font-cooper pb-4 font-semibold text-white">
             Sobre Nosotros
           </p>
@@ -17,7 +17,7 @@ export default function AboutUsSection() {
             <br />
             <span className="font-akira px-1 text-7xl">ESTEKO</span>?
           </h3>
-          <div className="border-primary absolute left-[60%] w-1/3 -translate-x-1/2 border-2 bg-[#303030] p-12 px-24 text-lg text-white">
+          <div className="border-primary absolute left-[70%] w-[700px] -translate-x-1/2 border-2 bg-[#303030] p-12 px-24 text-lg text-white">
             <p className="whitespace-pre-line">{ABOUT_US}</p>
           </div>
         </div>
