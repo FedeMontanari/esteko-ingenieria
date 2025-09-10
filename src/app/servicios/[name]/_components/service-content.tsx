@@ -29,13 +29,14 @@ export default function ServiceContent({ service }: { service: Service }) {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-2xl font-bold">{service.legend}</h2>
-      <div className="pt-12 w-3/4">
+      <h2 className="text-center text-2xl font-bold">{service.legend}</h2>
+      <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
         <Carousel
           setApi={setApi}
-          className="float-left mr-12 w-1/2"
+          className="w-full xl:float-left xl:mr-12 xl:w-1/2"
           style={{
             shapeOutside: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
           }}
@@ -43,18 +44,18 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselContent>
             {service.carouselImages.map((image, index) => (
               <CarouselItem
-                className="h-[400px] w-[600px] flex items-center justify-center"
+                className="flex h-[400px] w-[600px] items-center justify-center hover:cursor-grab active:cursor-grabbing"
                 key={index}
               >
                 <Image src={image} alt={service.title} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="w-full flex justify-center py-1">
+          <div className="flex w-full justify-center py-1">
             {Array.from({ length: count }).map((_, index) => (
               <button
                 key={index}
-                className={`h-[50px] w-full transition-colors ${
+                className={`h-[25px] w-full transition-colors xl:h-[50px] ${
                   index === current - 1 ? "bg-primary" : "bg-gray-400"
                 } hover:bg-primary hover:cursor-pointer`}
                 style={{
@@ -68,37 +69,34 @@ export default function ServiceContent({ service }: { service: Service }) {
               />
             ))}
           </div>
-          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
-          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:opacity-100" />
+          <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
+          <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
         </Carousel>
-        <p className="text-lg">{service.description}</p>
-        <ul className="list-disc list-inside py-4">
+        <p className="pt-4 text-start font-semibold xl:text-lg">
+          {service.description}
+        </p>
+      </div>
+      <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
+        <h3 className="text-start text-2xl font-bold">
+          Nuestros servicios incluyen:
+        </h3>
+        <ul className="list-inside py-4 pl-4 font-semibold">
           {service.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li className="before:content-['-']" key={item}>
+              {item}
+            </li>
           ))}
         </ul>
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex
-          dolorem. Illum iusto necessitatibus voluptatem nobis, reiciendis quasi
-          tenetur libero dolorem quia quas nostrum, delectus velit et ipsum
-          excepturi debitis. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Ipsa aliquam sint nam nisi ducimus officiis eligendi autem,
-          facere saepe. Vitae itaque ratione illo possimus quibusdam ipsum quo
-          iste accusamus doloribus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quidem cupiditate, pariatur dolorum fuga
-          perspiciatis sequi at iure quisquam praesentium asperiores, ad totam
-          quam libero et a magni! Unde, laudantium eum! Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Ad temporibus, mollitia, aut sequi
-          animi explicabo dolor provident nulla aperiam rerum tenetur incidunt
-          dignissimos. Ea ab voluptate quae obcaecati sed corporis. Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Optio dolor sit minima
-          fugiat blanditiis soluta fugit, iusto officia delectus sed rerum harum
-          eos voluptatem? Ipsam corporis quisquam soluta ipsa quam. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Optio nihil, sunt vel
-          odio enim officia neque labore deleniti assumenda iste dolorum fugiat?
-          Veritatis molestiae amet dicta architecto aperiam exercitationem
-          dolore.
-        </p>
+        <h3 className="text-start text-2xl font-bold">
+          Beneficios de {service.prosTitle}:
+        </h3>
+        <ul className="list-inside py-4 pl-4 font-semibold">
+          {service.pros.map((item) => (
+            <li className="before:content-['-']" key={item}>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

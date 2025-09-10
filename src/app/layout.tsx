@@ -5,8 +5,8 @@ import "./globals.css";
 import NavBar from "@/components/nav-bar";
 import Image from "next/image";
 import Footer from "@/components/footer";
-
-const ENV = process.env.NEXT_PUBLIC_ENVIRONMENT || process.env.NODE_ENV;
+import { cooper } from "@/assets/fonts/cooper";
+import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,7 +34,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (ENV === "production" && !process.env.NEXT_PUBLIC_PREVIEW_MODE) {
+  if (process.env.VERCEL_ENV === "production") {
     return (
       <html lang="es">
         <head>
@@ -44,9 +44,9 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${montserrat.variable} ${akira.variable} w-full h-full flex items-center justify-center bg-foreground overflow-hidden bg-gradient`}
+          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} bg-foreground flex h-full w-full items-center justify-center overflow-hidden`}
         >
-          <h1 className="text-white text-2xl absolute bottom-12">
+          <h1 className="absolute bottom-12 text-2xl text-white">
             En Construcción
           </h1>
           <Image
@@ -69,11 +69,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased ${montserrat.variable} ${akira.variable} flex flex-col min-h-screen relative pb-[340px]`}
+        className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} relative flex min-h-screen flex-col pb-[570px] sm:pb-[300px]`}
       >
         <NavBar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

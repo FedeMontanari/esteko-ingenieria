@@ -8,41 +8,21 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import Image from "next/image";
 import { Slash } from "lucide-react";
 import { Metadata } from "next";
-import { PageProps } from "../../../../.next/types/app/servicios/[name]/page";
 import ServiceContent from "./_components/service-content";
 
-interface OgApiResponse {
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
-}
-
-const API_IMG_SRC_MATCHER = "/server/assets/";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
-export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const params = await props.params;
-  const service = SERVICES.find((service) => service.id === params.name);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
+  const { name } = await params;
+  const service = SERVICES.find((service) => service.id === name);
 
   if (!service) {
     return notFound();
   }
-
-  const fetchImageUrl = await fetch(`${BASE_URL}/api/og?id=${service.id}`);
-  const imageUrlReponse = (await fetchImageUrl.json()) as OgApiResponse;
-  const imageFileName = imageUrlReponse.image.src.replace(
-    API_IMG_SRC_MATCHER,
-    ""
-  );
-
-  const imageUrl = encodeURIComponent(
-    `${BASE_URL}/_next/image?url=/_next/static/media/${imageFileName}&w=${imageUrlReponse.image.width}&q=75`
-  );
 
   return {
     title: `${service.title} | Esteko Ingeniería`,
@@ -50,11 +30,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     openGraph: {
       title: `${service.title} | Esteko Ingeniería`,
       description: service?.description,
-      images: [
-        {
-          url: imageUrl,
-        },
-      ],
+      images: service.image.src,
     },
   };
 }
@@ -76,57 +52,38 @@ export default async function ServicioPage({
     <main className="min-h-screen w-full">
       {/* Hero section */}
       <div className="relative w-full">
-        <Image
-          src={service.image}
-          alt={service.title}
-          width={1920}
-          height={1080}
-          className="w-full h-[400px] object-cover brightness-50"
-          priority
+        <video
+          src={service.heroVideo}
+          autoPlay
+          muted
+          loop
+          className="h-[400px] w-full object-cover brightness-50 xl:h-[550px]"
         />
         <div className="absolute inset-0 bg-black/50" />
 
-        <div
-          className="bg-white w-[170px] h-full absolute right-0 top-0 flex items-center justify-center"
-          style={{
-            clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0% 50%)",
-          }}
-        />
-        <div
-          className="bg-black w-[168px] h-full absolute right-0 top-0 flex items-center justify-center"
-          style={{
-            clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0% 50%)",
-          }}
-        >
-          <Image
-            src={service.logo}
-            alt={service.title}
-            width={100}
-            height={100}
-          />
-        </div>
-
-        <div className="absolute inset-0 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="mb-4 flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-bold text-white">{service.title}</h1>
-            <Breadcrumb className="mt-4">
-              <BreadcrumbList>
+        <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
+          <nav className="mb-4 flex flex-col items-center justify-center text-center xl:text-start">
+            <h1 className="text-4xl font-bold text-white xl:text-5xl">
+              {service.title}
+            </h1>
+            <Breadcrumb className="mt-4 hidden xl:block">
+              <BreadcrumbList className="flex flex-col items-center justify-center xl:flex-row">
                 <BreadcrumbItem>
                   <BreadcrumbLink
-                    className="text-white hover:text-white/80 text-lg"
+                    className="text-lg text-white hover:text-white/80"
                     href="/"
                   >
                     Inicio
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <Slash />
+                  <Slash className="text-primary" />
                 </BreadcrumbSeparator>
-                <BreadcrumbItem className="text-white text-lg">
+                <BreadcrumbItem className="text-lg text-white">
                   Servicios
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
-                  <Slash />
+                  <Slash className="text-primary" />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem className="text-primary text-lg font-bold">
                   {service.title}
@@ -138,7 +95,7 @@ export default async function ServicioPage({
       </div>
 
       {/* Service content section */}
-      <div className="w-full py-24">
+      <div className="w-full py-12 xl:py-24">
         <ServiceContent service={service} />
       </div>
     </main>
