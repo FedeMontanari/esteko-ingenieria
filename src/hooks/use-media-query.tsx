@@ -23,5 +23,9 @@ export function useIsMobile() {
 }
 
 export function useIsDesktop() {
-  return useMediaQuery("(min-width: 680px)");
+  return useMediaQuery("(min-width: 1024px)");
+}
+
+export function useIsTablet() {
+  return useMediaQuery("(min-width: 681px) and (max-width: 1023px)");
 }

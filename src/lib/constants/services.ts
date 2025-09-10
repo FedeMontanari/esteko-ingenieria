@@ -13,6 +13,14 @@ import {
   droneCarouselImages,
   droneMain,
 } from "@/assets/images/services/general/drone";
+import {
+  structuralCarrouselImages,
+  structuralFila,
+} from "@/assets/images/services/general/structural";
+import {
+  managementCarrouselImages,
+  management1234,
+} from "@/assets/images/services/general/management";
 
 import { StaticImageData } from "next/image";
 import {
@@ -88,15 +96,7 @@ Diseñamos y verificamos estructuras para todo tipo de sistemas constructivos, i
     href: "/servicios/calculo-estructural",
     logo: structuralCalculationLogo,
     legend: "Seguridad y eficiencia en cada estructura",
-    carouselImages: [
-      structuralCalculation,
-      structuralCalculation,
-      structuralCalculation,
-      structuralCalculation,
-      structuralCalculation,
-      structuralCalculation,
-      structuralCalculation,
-    ],
+    carouselImages: structuralCarrouselImages,
     heroVideo: "/structural-calculation-hero.webm",
     prosTitle: "nuestro diseño estructural",
     pros: [
@@ -125,14 +125,7 @@ Nos involucramos activamente en cada etapa, brindando soporte técnico en tiempo
     href: "/servicios/direccion-y-asesoramiento",
     logo: constructionManagementLogo,
     legend: "Gestión experta para el éxito de tu proyecto",
-    carouselImages: [
-      constructionManagement,
-      constructionManagement,
-      constructionManagement,
-      constructionManagement,
-      constructionManagement,
-      constructionManagement,
-    ],
+    carouselImages: managementCarrouselImages,
     heroVideo: "/construction-management-hero.webm",
     prosTitle: "nuestro acompañamiento técnico",
     pros: [
@@ -187,14 +180,14 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     title: "Cálculo estructural",
     description:
       "Cálculo y diseño estructural conforme a normativa vigente, orientado a maximizar la eficiencia constructiva y el uso racional de recursos en proyectos civiles, industriales y residenciales.",
-    image: structuralCalculation,
+    image: structuralFila,
   },
   {
     id: "direccion-y-asesoramiento",
     title: "Dirección de obra y asesoramiento técnico",
     description:
       "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para asegurar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
-    image: constructionManagement,
+    image: management1234,
   },
   {
     id: "fotografia-con-drones",

@@ -1,6 +1,10 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/use-media-query";
+import {
+  useIsDesktop,
+  useIsMobile,
+  useIsTablet,
+} from "@/hooks/use-media-query";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,43 +20,12 @@ import Image from "next/image";
 
 export default function ContactPageContent() {
   const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+  const isDesktop = useIsDesktop();
 
   return (
     <>
-      {isMobile ? (
-        <main className="min-h-screen w-full">
-          {/* Hero section */}
-          <div className="w-full">
-            <div className="bg-foreground flex h-[400px] flex-col justify-center">
-              <nav className="mb-4 flex flex-col items-center justify-center">
-                <h1 className="text-4xl font-bold text-white">Contáctanos</h1>
-              </nav>
-            </div>
-          </div>
-
-          <div className="px-4 py-12">
-            <h3 className="sr-only">Formulario de contacto</h3>
-            <ContactForm />
-          </div>
-
-          {/* Contact form section */}
-          <div className="relative flex w-full items-center justify-center">
-            <div className="bg-primary w-full py-12 text-white">
-              <h3 className="text-center text-3xl font-bold">
-                Medios para contáctarnos
-              </h3>
-              <div className="flex flex-col gap-4 px-12 pt-8">
-                <p className="before:bg-foreground relative font-semibold before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
-                  {CONTACT_DATA.email}
-                </p>
-                <p className="before:bg-foreground relative font-semibold whitespace-pre-line before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
-                  {CONTACT_DATA.phone}
-                </p>
-              </div>
-            </div>
-          </div>
-        </main>
-      ) : (
+      {isDesktop && (
         <main className="relative min-h-screen w-full">
           {/* Hero section */}
 
@@ -129,6 +102,74 @@ export default function ContactPageContent() {
             <div className="mx-auto w-1/2">
               <h3 className="sr-only">Formulario de contacto</h3>
               <ContactForm />
+            </div>
+          </div>
+        </main>
+      )}
+      {isMobile && (
+        <main className="min-h-screen w-full">
+          {/* Hero section */}
+          <div className="w-full">
+            <div className="bg-foreground flex h-[400px] flex-col justify-center">
+              <nav className="mb-4 flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-bold text-white">Contáctanos</h1>
+              </nav>
+            </div>
+          </div>
+
+          <div className="px-4 py-12">
+            <h3 className="sr-only">Formulario de contacto</h3>
+            <ContactForm />
+          </div>
+
+          {/* Contact form section */}
+          <div className="relative flex w-full items-center justify-center">
+            <div className="bg-primary w-full py-12 text-white">
+              <h3 className="text-center text-3xl font-bold">
+                Medios para contáctarnos
+              </h3>
+              <div className="flex flex-col gap-4 px-12 pt-8">
+                <p className="before:bg-foreground relative font-semibold before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
+                  {CONTACT_DATA.email}
+                </p>
+                <p className="before:bg-foreground relative font-semibold whitespace-pre-line before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
+                  {CONTACT_DATA.phone}
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+      )}
+      {isTablet && (
+        <main className="min-h-screen w-full">
+          {/* Hero section */}
+          <div className="w-full">
+            <div className="bg-foreground flex h-[400px] flex-col justify-center">
+              <nav className="mb-4 flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-bold text-white">Contáctanos</h1>
+              </nav>
+            </div>
+          </div>
+
+          <div className="px-4 py-12">
+            <h3 className="sr-only">Formulario de contacto</h3>
+            <ContactForm />
+          </div>
+
+          {/* Contact form section */}
+          <div className="relative flex w-full items-center justify-center">
+            <div className="bg-primary w-full py-12 text-white">
+              <h3 className="text-center text-3xl font-bold">
+                Medios para contáctarnos
+              </h3>
+              <div className="flex flex-col gap-4 px-12 pt-8">
+                <p className="before:bg-foreground relative font-semibold before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
+                  {CONTACT_DATA.email}
+                </p>
+                <p className="before:bg-foreground relative font-semibold whitespace-pre-line before:absolute before:-bottom-2 before:-left-10 before:h-[2px] before:w-[100px] before:content-['']">
+                  {CONTACT_DATA.phone}
+                </p>
+              </div>
             </div>
           </div>
         </main>

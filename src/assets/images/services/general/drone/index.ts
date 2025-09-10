@@ -41,4 +41,4 @@ export const droneCarouselImages = [
   droneCaptura192917,
   droneCaptura193025,
   droneCaptura193839,
-]; 
+];

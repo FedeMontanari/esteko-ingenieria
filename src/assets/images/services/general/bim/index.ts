@@ -29,4 +29,4 @@ export const bimCarouselImages = [
   bimLcc1,
   bimLcc2,
   bimWpc1,
-]; 
+];
