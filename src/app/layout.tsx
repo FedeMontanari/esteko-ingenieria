@@ -35,34 +35,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.VERCEL_ENV === "production") {
-    return (
-      <html lang="es">
-        <head>
-          <meta
-            name="google-site-verification"
-            content="QuK6G-W3bxR028m6L8nTM_RAinuYRi8WEVYNyZuCyiM"
-          />
-        </head>
-        <body
-          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} bg-foreground flex h-full w-full items-center justify-center overflow-hidden`}
-        >
-          <PostHogProvider>
-            <h1 className="absolute bottom-12 text-2xl text-white">
-              En Construcción
-            </h1>
-            <Image
-              src="/soon.jpg"
-              alt="Esteko Ingeniería"
-              width={1013}
-              height={1013}
-            />
-          </PostHogProvider>
-        </body>
-      </html>
-    );
-  }
-
   return (
     <html lang="es" className="scroll-smooth">
       <head>
