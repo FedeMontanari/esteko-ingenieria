@@ -6,18 +6,22 @@ import dronePhotographyLogo from "@/assets/images/services/logos/drone-logo.svg"
 // Import carousel images
 import {
   bimCarouselImages,
-  bimMain,
   bimPortada,
+  bimWpc1,
 } from "@/assets/images/services/general/bim";
 import {
   droneCarouselImages,
   droneMain,
+  dronePortada,
 } from "@/assets/images/services/general/drone";
 import {
   structuralCarrouselImages,
-  structuralFila,
+  structuralRender,
 } from "@/assets/images/services/general/structural";
-import { managementCarrouselImages } from "@/assets/images/services/general/management";
+import {
+  managementCarrouselImages,
+  management100705,
+} from "@/assets/images/services/general/management";
 
 import { StaticImageData } from "next/image";
 import {
@@ -170,27 +174,27 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     title: "Consultoría B.I.M",
     description:
       "Modelado, gestión y coordinación de modelos bajo metodología BIM para optimizar el diseño, la planificación y la ejecución de proyectos, integrando procesos colaborativos y soluciones digitales para la construcción.",
-    image: bimMain,
+    image: bimWpc1,
   },
   {
     id: "calculo-estructural",
     title: "Cálculo estructural",
     description:
       "Cálculo y diseño estructural conforme a normativa vigente, orientado a maximizar la eficiencia constructiva y el uso racional de recursos en proyectos civiles, industriales y residenciales.",
-    image: structuralFila,
+    image: structuralRender,
   },
   {
     id: "direccion-y-asesoramiento",
     title: "Dirección de obra y asesoramiento técnico",
     description:
       "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para asegurar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
-    image: constructionManagement,
+    image: management100705,
   },
   {
     id: "fotografia-con-drones",
     title: "Fotogrametría con drones",
     description:
       "Relevamientos aéreos de alta precisión para digitalización de obras, control de avance, documentación As-Built y análisis técnico de terrenos y estructuras.",
-    image: droneMain,
+    image: dronePortada,
   },
 ];
