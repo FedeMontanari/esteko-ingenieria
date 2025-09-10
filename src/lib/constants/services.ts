@@ -17,10 +17,7 @@ import {
   structuralCarrouselImages,
   structuralFila,
 } from "@/assets/images/services/general/structural";
-import {
-  managementCarrouselImages,
-  management1234,
-} from "@/assets/images/services/general/management";
+import { managementCarrouselImages } from "@/assets/images/services/general/management";
 
 import { StaticImageData } from "next/image";
 import {
@@ -187,7 +184,7 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     title: "Dirección de obra y asesoramiento técnico",
     description:
       "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para asegurar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
-    image: management1234,
+    image: constructionManagement,
   },
   {
     id: "fotografia-con-drones",
