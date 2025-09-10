@@ -7,6 +7,7 @@ import Image from "next/image";
 import Footer from "@/components/footer";
 import { cooper } from "@/assets/fonts/cooper";
 import { Toaster } from "@/components/ui/sonner";
+import { PostHogProvider } from "./providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,32 +35,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.VERCEL_ENV === "production") {
-    return (
-      <html lang="es">
-        <head>
-          <meta
-            name="google-site-verification"
-            content="QuK6G-W3bxR028m6L8nTM_RAinuYRi8WEVYNyZuCyiM"
-          />
-        </head>
-        <body
-          className={`${montserrat.variable} ${akira.variable} ${cooper.variable} bg-foreground flex h-full w-full items-center justify-center overflow-hidden`}
-        >
-          <h1 className="absolute bottom-12 text-2xl text-white">
-            En Construcción
-          </h1>
-          <Image
-            src="/soon.jpg"
-            alt="Esteko Ingeniería"
-            width={1013}
-            height={1013}
-          />
-        </body>
-      </html>
-    );
-  }
-
   return (
     <html lang="es" className="scroll-smooth">
       <head>
@@ -71,10 +46,12 @@ export default function RootLayout({
       <body
         className={`antialiased ${montserrat.variable} ${akira.variable} ${cooper.variable} relative flex min-h-screen flex-col pb-[570px] sm:pb-[300px]`}
       >
-        <NavBar />
-        {children}
-        <Footer />
-        <Toaster />
+        <PostHogProvider>
+          <NavBar />
+          {children}
+          <Footer />
+          <Toaster />
+        </PostHogProvider>
       </body>
     </html>
   );
