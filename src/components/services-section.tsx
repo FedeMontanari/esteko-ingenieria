@@ -71,7 +71,7 @@ function ServiceItemCard({
         />
         <ItemCardFlare isOdd={isOdd} service={service} />
         <span
-          className={`bg-primary absolute bottom-0 flex h-[60px] w-[calc(100%-150px)] items-center justify-center text-2xl font-bold text-white ${
+          className={`bg-primary absolute bottom-0 flex h-[60px] w-[calc(100%-40px)] items-center justify-center text-2xl font-bold text-white ${
             isOdd ? "right-0" : "left-0"
           }`}
         >
@@ -95,7 +95,7 @@ function ItemCardFlare({
     <>
       <div className="absolute inset-0 flex h-full items-center justify-center">
         <div
-          className={`absolute top-0 right-0 z-10 flex h-full w-[170px] items-center justify-center bg-white ${
+          className={`absolute top-0 right-0 z-10 flex h-full w-[52px] items-center justify-center bg-white ${
             isOdd ? "left-0" : "right-0"
           }`}
           style={{
@@ -103,7 +103,7 @@ function ItemCardFlare({
           }}
         />
         <div
-          className={`absolute top-0 right-0 z-10 flex h-full w-[165px] flex-col items-center justify-between bg-black py-4 ${
+          className={`absolute top-0 right-0 z-10 flex h-full w-[50px] flex-col items-center justify-between bg-black py-4 ${
             isOdd ? "left-0" : "right-0"
           }`}
           style={{

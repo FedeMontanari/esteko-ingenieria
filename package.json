@@ -9,7 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx,json,css,md}",
-    "prebuild": "pnpm prettier && pnpm lint && pnpm typecheck"
+    "prepush": "pnpm prettier && pnpm lint && pnpm typecheck"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
