@@ -17,6 +17,7 @@ export default function Home() {
               autoPlay
               muted
               loop
+              controls={false}
               className="h-full w-full object-cover brightness-20"
             >
               <source src="/landing-hero.webm" type="video/webm" />
