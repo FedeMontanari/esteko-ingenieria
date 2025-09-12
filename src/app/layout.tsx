@@ -3,7 +3,6 @@ import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/nav-bar";
-import Image from "next/image";
 import Footer from "@/components/footer";
 import { cooper } from "@/assets/fonts/cooper";
 import { Toaster } from "@/components/ui/sonner";
