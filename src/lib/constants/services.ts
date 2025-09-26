@@ -30,7 +30,10 @@ import {
 } from "@/assets/images/services/general";
 
 export interface Service extends ServiceLanding {
-  items: string[];
+  items: {
+    title: string;
+    content: string;
+  }[];
   href: string;
   logo: StaticImageData;
   legend: string;
@@ -55,12 +58,36 @@ export const SERVICES: Service[] = [
 Trabajamos junto a estudios de arquitectura, desarrolladoras, constructoras y organismos técnicos, acompañando la implementación de metodologías colaborativas, estándares internacionales y flujos de trabajo eficientes, estructurados en torno al uso de modelos digitales consistentes y actualizados.
 `,
     items: [
-      "Modelado y coordinación BIM multidisciplinaria, desde fases tempranas de diseño hasta construcción y operación, asegurando modelos coherentes y actualizados.",
-      "Detección temprana de interferencias (Clash Detection) entre disciplinas, previniendo errores en obra y reduciendo costos asociados a retrabajos.",
-      "Documentación técnica automatizada, listas para obra y adaptadas a cada etapa del proyecto, con control de versiones y consistencia gráfica.",
-      "Planificación 4D y análisis de costos 5D, para evaluar cronogramas, secuencias constructivas y presupuestos desde el entorno digital.",
-      "Generación de modelos As-Built precisos, integrando relevamientos con drones y escaneo 3D, ideales para documentación de obra, certificaciones o mantenimiento futuro.",
-      "Estandarización de procesos BIM, definición de protocolos, plantillas, niveles de desarrollo (LOD) y estructuración de flujos de trabajo internos.",
+      {
+        title: "Modelado y coordinación BIM",
+        content:
+          "Modelado y coordinación BIM multidisciplinaria, desde fases tempranas de diseño hasta construcción y operación, asegurando modelos coherentes y actualizados.",
+      },
+      {
+        title: "Detección temprana de interferencias",
+        content:
+          "Clash Detection entre disciplinas, previniendo errores en obra y reduciendo costos asociados a retrabajos.",
+      },
+      {
+        title: "Documentación técnica automatizada",
+        content:
+          "Documentación lista para obra y adaptada a cada etapa del proyecto, con control de versiones y consistencia gráfica.",
+      },
+      {
+        title: "Planificación 4D y análisis 5D",
+        content:
+          "Evaluación de cronogramas, secuencias constructivas y presupuestos desde el entorno digital.",
+      },
+      {
+        title: "Modelos As-Built",
+        content:
+          "Generación de modelos As-Built precisos, integrando relevamientos con drones y escaneo 3D, ideales para documentación de obra, certificaciones o mantenimiento futuro.",
+      },
+      {
+        title: "Estandarización de procesos BIM",
+        content:
+          "Definición de protocolos, plantillas, niveles de desarrollo (LOD) y estructuración de flujos de trabajo internos.",
+      },
     ],
     image: bimPortada,
     href: "/servicios/consultoria-bim",
@@ -86,12 +113,36 @@ Trabajamos junto a estudios de arquitectura, desarrolladoras, constructoras y or
 Diseñamos y verificamos estructuras para todo tipo de sistemas constructivos, incluyendo naves industriales, estructuras de acero, steel frame, wood frame, paneles SIP, estructuras de hormigón armado (in situ o premoldeado) y soluciones mixtas como acero-hormigón o madera-hormigón. Adaptamos nuestros métodos de cálculo y documentación a las particularidades de cada sistema, asegurando coherencia técnica y constructiva en cada proyecto.
 `,
     items: [
-      "Análisis, dimensionamiento y verificación estructural conforme a normativas locales.",
-      "Optimización estructural orientada a la eficiencia constructiva: minimización de desperdicios, racionalización de materiales y reducción de costos sin comprometer la seguridad.",
-      "Modelado estructural y simulaciones avanzadas para evaluar el comportamiento ante cargas estáticas, dinámicas y sísmicas.",
-      "Generación de documentación técnica completa: planos estructurales, detalles constructivos, memorias de cálculo y cómputos de materiales listos para obra.",
-      "Elaboración de informes técnicos e inspecciones estructurales en obra, para evaluar el cumplimiento, identificar patologías o acompañar procesos de certificación.",
-      "Integración con metodología BIM, facilitando la coordinación entre disciplinas y asegurando coherencia entre los modelos estructurales y arquitectónicos.",
+      {
+        title: "Cálculo estructural adaptado al diseño arquitectónico",
+        content:
+          "Análisis, dimensionamiento y verificación de estructuras conforme a normativas locales, asegurando la correcta adaptación a las propuestas arquitectónicas sin comprometer seguridad ni funcionalidad.",
+      },
+      {
+        title: "Optimización de soluciones constructivas",
+        content:
+          "Desarrollo de propuestas orientadas a la eficiencia: reducción de desperdicios, racionalización de materiales y disminución de costos, garantizando estructuras seguras y viables en obra.",
+      },
+      {
+        title: "Modelado estructural y simulaciones avanzadas",
+        content:
+          "Evaluación del comportamiento estructural ante cargas estáticas, dinámicas y sísmicas.",
+      },
+      {
+        title: "Documentación técnica completa",
+        content:
+          "Planos estructurales, detalles constructivos, memorias de cálculo y cómputos de materiales listos para obra.",
+      },
+      {
+        title: "Informes técnicos e inspecciones en obra",
+        content:
+          "Evaluación de cumplimiento, identificación de patologías y acompañamiento en procesos de certificación.",
+      },
+      {
+        title: "Integración con metodología BIM",
+        content:
+          "Coordinación entre disciplinas, asegurando coherencia entre los modelos estructurales y arquitectónicos.",
+      },
     ],
     image: structuralCalculation,
     href: "/servicios/calculo-estructural",
@@ -115,12 +166,36 @@ Diseñamos y verificamos estructuras para todo tipo de sistemas constructivos, i
 Nos involucramos activamente en cada etapa, brindando soporte técnico en tiempo real, supervisando el avance y coordinando la interacción entre los distintos rubros involucrados.
 `,
     items: [
-      "Dirección técnica de obra, con seguimiento de avance, control de calidad y verificación de cumplimiento de especificaciones técnicas.",
-      "Asesoramiento estructural y constructivo en obra, ante modificaciones, interferencias o situaciones imprevistas.",
-      "Gestión de contratistas y coordinación entre rubros, asegurando el correcto desarrollo del cronograma de obra.",
-      "Revisión y aprobación de documentación ejecutiva, adaptaciones de proyecto y control de entregables técnicos.",
-      "Elaboración de informes técnicos, actas de inspección y certificaciones conforme a los avances de obra.",
-      "Auditorías técnicas y asesoramiento a estudios, desarrolladoras o inversores en etapas previas a la ejecución.",
+      {
+        title: "Dirección técnica de obra",
+        content:
+          "Seguimiento de avance, control de calidad y verificación del cumplimiento de especificaciones técnicas.",
+      },
+      {
+        title: "Asesoramiento estructural y constructivo en obra",
+        content:
+          "Soporte especializado ante modificaciones, interferencias o situaciones imprevistas durante la ejecución.",
+      },
+      {
+        title: "Gestión de contratistas y coordinación entre rubros",
+        content:
+          "Organización del trabajo en obra, asegurando la correcta secuencia de tareas y el cumplimiento del cronograma.",
+      },
+      {
+        title: "Revisión y aprobación de documentación ejecutiva",
+        content:
+          "Control de planos, adaptaciones de proyecto y validación de entregables técnicos.",
+      },
+      {
+        title: "Informes técnicos y certificaciones de obra",
+        content:
+          "Elaboración de actas de inspección, informes de avance y certificaciones según la ejecución.",
+      },
+      {
+        title: "Auditorías técnicas para terceros",
+        content:
+          "Asesoramiento a estudios, desarrolladoras o inversores en etapas previas a la obra, evaluando viabilidad y riesgos técnicos.",
+      },
     ],
     image: constructionManagement,
     href: "/servicios/direccion-y-asesoramiento",
@@ -144,13 +219,41 @@ Nos involucramos activamente en cada etapa, brindando soporte técnico en tiempo
 Nuestro servicio combina experiencia en ingeniería civil con técnicas avanzadas de fotogrametría, ofreciendo productos ajustados a cada etapa del proyecto, desde estudios preliminares hasta certificación final.
 `,
     items: [
-      "Relevamiento aéreo de terrenos y estructuras mediante drones de alta precisión.",
-      "Generación de nubes de puntos, ortomosaicos, modelos digitales de elevación (DSM) y terreno (DTM).",
-      "Medición volumétrica de acopios, control de producción y elaboración de informes en canteras, plantas de hormigón, minería y energía.",
-      "Seguimiento de obra a través de vuelos periódicos, con control de avance y comparación con cronogramas.",
-      "Documentación As-Built mediante modelos 3D y ortoimágenes que reflejan el estado real de la obra.",
-      "Cálculo y verificación de movimientos de suelos para control de ejecución y planificación de tareas.",
-      "Inspección técnica de líneas eléctricas, cubiertas, estructuras elevadas y zonas inaccesibles.",
+      {
+        title: "Relevamiento aéreo de terrenos y estructuras",
+        content:
+          "Captura de datos mediante drones de alta precisión para proyectos de ingeniería y construcción.",
+      },
+      {
+        title: "Generación de modelos digitales y nubes de puntos",
+        content:
+          "Obtención de ortomosaicos, nubes de puntos, modelos digitales de elevación (DSM) y de terreno (DTM).",
+      },
+      {
+        title: "Mediciones volumétricas y control de producción",
+        content:
+          "Cálculo de volúmenes, seguimiento de acopios y elaboración de informes en canteras, plantas de hormigón, minería y energía.",
+      },
+      {
+        title: "Seguimiento de obra con vuelos periódicos",
+        content:
+          "Control de avance, comparación con cronogramas y documentación visual del progreso de obra.",
+      },
+      {
+        title: "Documentación As-Built aérea",
+        content:
+          "Generación de modelos 3D y ortoimágenes que reflejan con precisión el estado real de la obra.",
+      },
+      {
+        title: "Cálculo y verificación de movimientos de suelos",
+        content:
+          "Control de ejecución y planificación de tareas mediante análisis topográficos digitales.",
+      },
+      {
+        title: "Inspección técnica en zonas críticas",
+        content:
+          "Relevamiento de líneas eléctricas, cubiertas, estructuras elevadas y áreas de difícil acceso.",
+      },
     ],
     image: droneMain,
     href: "/servicios/fotografia-con-drones",

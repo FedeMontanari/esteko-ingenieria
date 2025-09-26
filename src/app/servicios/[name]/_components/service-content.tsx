@@ -10,12 +10,20 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useIsDesktop } from "@/hooks/use-media-query";
 
 export default function ServiceContent({ service }: { service: Service }) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
     if (!api) {
@@ -72,29 +80,50 @@ export default function ServiceContent({ service }: { service: Service }) {
           <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
           <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 opacity-50 hover:cursor-pointer hover:opacity-100" />
         </Carousel>
-        <p className="pt-4 text-start font-semibold xl:text-lg">
-          {service.description}
-        </p>
+        {isDesktop && (
+          <p className="pt-4 text-start font-semibold xl:text-lg">
+            {service.description}
+          </p>
+        )}
       </div>
-      <div className="w-full px-4 xl:w-3/4 xl:px-0 xl:pt-12">
-        <h3 className="text-start text-2xl font-bold">
+      <div className="w-full px-4 pt-12 xl:w-3/4 xl:px-0">
+        <h3 className="text-center text-2xl font-bold md:text-start">
           Nuestros servicios incluyen:
         </h3>
         <ul className="list-inside py-4 pl-4 font-semibold">
-          {service.items.map((item) => (
-            <li className="before:content-['-']" key={item}>
-              {item}
-            </li>
-          ))}
+          {isDesktop ? (
+            <Accordion type="multiple" defaultValue={Array.from(service.items, (_, i)=> `item-${i}`)}>
+              {service.items.map((item, i) => (
+                <AccordionItem key={item.title} value={`item-${i}`}>
+                  <AccordionTrigger className="text-md font-bold">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent>{item.content}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          ) : (
+            <Accordion type="single" collapsible>
+              {service.items.map((item, i) => (
+                <AccordionItem key={item.title} value={`item-${i}`}>
+                  <AccordionTrigger className="text-md font-bold">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent>{item.content}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          )}
         </ul>
-        <h3 className="text-start text-2xl font-bold">
+        <h3 className="pt-6 pb-4 text-center text-2xl font-bold md:text-start">
           Beneficios de {service.prosTitle}:
         </h3>
         <ul className="list-inside py-4 pl-4 font-semibold">
           {service.pros.map((item) => (
-            <li className="before:content-['-']" key={item}>
-              {item}
-            </li>
+            <Fragment key={item}>
+              <li className="before:content-['-']">{item}</li>
+              <br />
+            </Fragment>
           ))}
         </ul>
       </div>
