@@ -132,7 +132,7 @@ export default function NavBar() {
               <Link
                 href="/"
                 onClick={() => setOpen(false)}
-                className="text-4xl font-bold"
+                className="text-2xl font-bold"
               >
                 Inicio
               </Link>
@@ -141,25 +141,11 @@ export default function NavBar() {
               orientation="horizontal"
               className="my-8 w-full bg-black"
             />
-            <div className="flex flex-col gap-2 space-y-3">
-              <h3 className="text-4xl font-bold">Nosotros</h3>
-              <Link
-                onClick={() => setOpen(false)}
-                className="text-2xl"
-                href="/contacto"
-              >
-                Contáctanos
-              </Link>
-            </div>
-            <Separator
-              orientation="horizontal"
-              className="my-8 w-full bg-black"
-            />
             <div className="flex flex-col items-center justify-center gap-2 space-y-3">
-              <h3 className="text-4xl font-bold">Servicios</h3>
+              <h3 className="text-2xl font-bold">Servicios</h3>
               {SERVICES.map((service) => (
                 <Link
-                  className="text-2xl"
+                  className="text-xl"
                   key={service.id}
                   href={`/servicios/${service.id}`}
                   onClick={() => setOpen(false)}
@@ -167,6 +153,20 @@ export default function NavBar() {
                   {service.title}
                 </Link>
               ))}
+            </div>
+            <Separator
+              orientation="horizontal"
+              className="my-8 w-full bg-black"
+            />
+            <div className="flex flex-col gap-2 space-y-3">
+              {/* <h3 className="text-2xl font-bold text-center">Nosotros</h3> */}
+              <Link
+                onClick={() => setOpen(false)}
+                className="text-2xl font-bold text-center"
+                href="/contacto"
+              >
+                Contáctanos
+              </Link>
             </div>
           </PopoverContent>
         </Popover>
