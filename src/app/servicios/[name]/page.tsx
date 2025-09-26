@@ -25,11 +25,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${service.title} | Esteko Ingeniería`,
+    title: `${service.title}`,
     description: service.description,
     openGraph: {
-      title: `${service.title} | Esteko Ingeniería`,
-      description: service?.description,
       images: service.image.src,
     },
   };

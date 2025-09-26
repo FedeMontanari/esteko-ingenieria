@@ -5,7 +5,7 @@ import ContactPageContent from "./_components/contact-page-content";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Contacto",
-    description: "Contáctanos para más información",
+    description: "Ponte en contacto con nosotros para resolver tus dudas, recibir asistencia o conocer más sobre nuestros servicios. Estamos aquí para ayudarte.",
     openGraph: {
       images: contactImage.src,
     },
