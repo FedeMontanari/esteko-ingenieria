@@ -57,6 +57,8 @@ export default async function ServicioPage({
           autoPlay
           muted
           loop
+          playsInline
+          webkit-playsinline="true"
           className="h-[400px] w-full object-cover brightness-50 xl:h-[550px]"
         />
         <div className="absolute inset-0 bg-black/50" />
