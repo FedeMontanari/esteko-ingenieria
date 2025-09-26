@@ -24,13 +24,14 @@ export default function AboutUsSection() {
       ) : (
         <>
           <div className="my-24 flex h-fit w-full flex-col flex-wrap items-center">
-            <div className="flex w-full items-center justify-center">
-              <h3 className="font-cooper text-4xl font-bold">
-                Porque{" "}
-                <span className="font-akira text-primary text-4xl">ESTEKO</span>
+            <div className="flex w-full items-center justify-center text-center">
+              <h3 className="font-cooper text-4xl">
+                ¿POR QUE ELEGIR
+                <br />
+                <span className="font-akira text-primary text-4xl">ESTEKO</span>?
               </h3>
             </div>
-            <p className="border-primary mx-4 mt-10 border-2 p-5 text-center text-lg whitespace-pre-line">
+            <p className="border-primary mx-4 mt-10 border-2 p-5 text-start text-lg whitespace-pre-line">
               {ABOUT_US}
             </p>
           </div>

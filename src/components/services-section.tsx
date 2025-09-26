@@ -127,11 +127,11 @@ function ServiceItemCardMobile({ service }: { service: ServiceLanding }) {
           alt={service.title}
           width={320}
           height={320}
-          className="h-full w-full object-cover brightness-50"
+          className="h-[320px] w-full object-cover brightness-50"
         />
         <p className="p-4 font-semibold">{service.description}</p>
         <Link
-          className="bg-primary flex h-[60px] w-full items-center justify-center text-2xl font-bold text-white"
+          className="flex h-[60px] w-full items-center justify-center text-2xl font-bold text-primary border-t border-t-foreground"
           href={`/servicios/${service.id}`}
         >
           Conocer más <ChevronsRight className="ml-2 inline-block" />
