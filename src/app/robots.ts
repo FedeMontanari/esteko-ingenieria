@@ -9,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/contacto"],
     },
     sitemap: "https://www.estekoingenieria.com/sitemap.xml",
   };
