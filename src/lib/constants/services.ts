@@ -290,7 +290,7 @@ export const SERVICES_LANDING: ServiceLanding[] = [
     id: "direccion-y-asesoramiento",
     title: "Dirección de obra y asesoramiento técnico",
     description:
-      "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para asegurar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
+      "Acompañamiento técnico integral durante la obra, con control de calidad y dirección profesional para garantizar estructuras seguras, obras bien ejecutadas y en cumplimiento con la normativa vigente.",
     image: management100705,
   },
   {
