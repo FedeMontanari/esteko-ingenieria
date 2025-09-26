@@ -29,10 +29,11 @@ export async function generateMetadata({
     description: service.description,
     openGraph: {
       images: service.image.src,
+      siteName: `${service.title}  | Esteko Ingenieria`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title}`,
+      title: `${service.title}  | Esteko Ingenieria`,
       description: service.description,
       images: service.image.src,
     },

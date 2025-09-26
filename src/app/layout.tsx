@@ -19,14 +19,20 @@ const akira = localFont({
   variable: "--font-akira",
 });
 
+const canonUrl = new URL("https://www.estekoingenieria.com/")
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.estekoingenieria.com/"),
+  metadataBase: canonUrl,
   title: {
     default: "Esteko Ingeniería",
     template: "%s | Esteko Ingeniería",
   },
   description:
     "Esteko Ingeniería, Ingeniería y Construcción. Ofrecemos soluciones integrales en ingeniería y construcción.",
+  openGraph: {
+    siteName: 'Esteko Ingeniería',
+    url: canonUrl,
+  }
 };
 
 export default function RootLayout({

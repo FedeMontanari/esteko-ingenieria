@@ -11,10 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
     description: METADATA_DESCRIPTION,
     openGraph: {
       images: contactImage.src,
+      siteName: 'Contacto  | Esteko Ingenieria',
     },
     twitter: {
       card: "summary_large_image",
-      title: "Contacto",
+      title: "Contacto | Esteko Ingenieria",
       description: METADATA_DESCRIPTION,
       images: contactImage.src,
     },
