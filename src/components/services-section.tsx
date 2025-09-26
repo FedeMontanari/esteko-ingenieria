@@ -131,7 +131,7 @@ function ServiceItemCardMobile({ service }: { service: ServiceLanding }) {
         />
         <p className="p-4 font-semibold">{service.description}</p>
         <Link
-          className="flex h-[60px] w-full items-center justify-center text-2xl font-bold text-primary border-t border-t-foreground"
+          className="text-primary border-t-foreground flex h-[60px] w-full items-center justify-center border-t text-2xl font-bold"
           href={`/servicios/${service.id}`}
         >
           Conocer más <ChevronsRight className="ml-2 inline-block" />

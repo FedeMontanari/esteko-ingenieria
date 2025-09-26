@@ -28,7 +28,8 @@ export default function AboutUsSection() {
               <h3 className="font-cooper text-4xl">
                 ¿POR QUE ELEGIR
                 <br />
-                <span className="font-akira text-primary text-4xl">ESTEKO</span>?
+                <span className="font-akira text-primary text-4xl">ESTEKO</span>
+                ?
               </h3>
             </div>
             <p className="border-primary mx-4 mt-10 border-2 p-5 text-start text-lg whitespace-pre-line">

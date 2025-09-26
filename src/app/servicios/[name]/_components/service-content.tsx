@@ -92,7 +92,10 @@ export default function ServiceContent({ service }: { service: Service }) {
         </h3>
         <ul className="list-inside py-4 pl-4 font-semibold">
           {isDesktop ? (
-            <Accordion type="multiple" defaultValue={Array.from(service.items, (_, i)=> `item-${i}`)}>
+            <Accordion
+              type="multiple"
+              defaultValue={Array.from(service.items, (_, i) => `item-${i}`)}
+            >
               {service.items.map((item, i) => (
                 <AccordionItem key={item.title} value={`item-${i}`}>
                   <AccordionTrigger className="text-md font-bold">

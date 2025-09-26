@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx,json,css,md}",
+    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
     "prepush": "pnpm prettier && pnpm lint && pnpm typecheck"
   },
   "dependencies": {
